@@ -1,0 +1,7 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+PCB/Carriage/__Previews/*
+PCB/Carriage/History/*
+PCB/Carriage/Project Logs for Carriage/*
+PCB/Carriage/Project Outputs for Carriage/*
+PCB/Carriage/Project Outputs for Free Documents/*
+PCB/Carriage/Carriage.PcbDoc.htm
