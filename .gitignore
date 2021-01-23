@@ -1,7 +1,7 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
 PCB/endstop/__Previews/*
 PCB/endstop/History/*
-PCB/endstop/Project Logs for Carriage/*
-PCB/endstop/Project Outputs for Carriage/*
+PCB/endstop/Project Logs for endstop/*
+PCB/endstop/Project Outputs for endstop/*
 PCB/endstop/Project Outputs for Free Documents/*
 PCB/endstop/Carriage.PcbDoc.htm
