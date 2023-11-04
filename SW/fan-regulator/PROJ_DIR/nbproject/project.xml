@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>fan-regulator</name>
+            <creation-uuid>f81a5e63-89a6-487f-a461-f5150807b87f</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions>h</header-extensions>
+            <asminc-extensions/>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>../app/inc</sourceRootElem>
+                <sourceRootElem>../drivers/inc</sourceRootElem>
+                <sourceRootElem>../hw-wrap/inc</sourceRootElem>
+                <sourceRootElem>../main/inc</sourceRootElem>
+                <sourceRootElem>../app/src</sourceRootElem>
+                <sourceRootElem>../drivers/src</sourceRootElem>
+                <sourceRootElem>../hw-wrap/src</sourceRootElem>
+                <sourceRootElem>../main/src</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
