@@ -11,3 +11,7 @@ PCB/fan-regulator/Project Logs for fan-regulator/*
 PCB/fan-regulator/Project Outputs for fan-regulator/*
 PCB/fan-regulator/Project Outputs for Free Documents/*
 PCB/fan-regulator/fan-regulator.PcbDoc.htm
+SW/fan-regulator/PROJ_DIR/.generated_files/*
+SW/fan-regulator/PROJ_DIR/debug/*
+SW/fan-regulator/PROJ_DIR/build/*
+SW/fan-regulator/PROJ_DIR/dist/*
