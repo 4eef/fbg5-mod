@@ -42,13 +42,13 @@ eDrvError hw_wrap_init(void){
 * @param    Pointer to received data buffer
 * @param    Size of data to receive
 */
-//eDrvError hw_wrap_spiRx(uint8_t *pRxData, uint16_t size){
-//    eDrvError exitStatus = drvUnknownError;
-//    
-//    exitStatus = spi_receive(pRxData, size);
-//    
-//    return exitStatus;
-//}
+eDrvError hw_wrap_spiRx(uint8_t *pRxData, uint16_t size){
+    eDrvError exitStatus = drvUnknownError;
+    
+    exitStatus = spi_receive(pRxData, size);
+    
+    return exitStatus;
+}
 
 /*!****************************************************************************
 * @brief    Do a duplex transaction of number of bytes through SPI interface
@@ -56,13 +56,13 @@ eDrvError hw_wrap_init(void){
 * @param    Pointer to received data buffer
 * @param    Size of transaction
 */
-//eDrvError hw_wrap_spiTxRx(uint8_t *pTxData, uint8_t *pRxData, uint16_t size){
-//    eDrvError exitStatus = drvUnknownError;
-//    
-//    exitStatus = spi_transmitReceive(pTxData, pRxData, size);
-//    
-//    return exitStatus;
-//}
+eDrvError hw_wrap_spiTxRx(uint8_t *pTxData, uint8_t *pRxData, uint16_t size){
+    eDrvError exitStatus = drvUnknownError;
+    
+    exitStatus = spi_transmitReceive(pTxData, pRxData, size);
+    
+    return exitStatus;
+}
 
 /*!****************************************************************************
 * @brief    Set specified pin to enabled state
@@ -124,10 +124,10 @@ eDrvError hw_wrap_pinSetDir(GPnum_type pin, bool pinDir){
 }
 
 /*!****************************************************************************
-* @brief    Get reading of temperature sensor
+* @brief    Get reading of inner temperature sensor
 * @param    Pointer where converted result (temp in K x 10) will be written
 */
-eDrvError hw_wrap_adcGetTemp(int16_t *pTempVal){
+eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal){
     eDrvError exitStatus = drvUnknownError, adcExitStatus;
     uint32_t temp;
     uint16_t adcVal, vRef;
@@ -175,6 +175,16 @@ eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal){
     *pVoltVal = temp;
     
     exitStatus = drvNoError;
+    return exitStatus;
+}
+
+/*!****************************************************************************
+* @brief    Get reading of external temperature sensor
+* @param    Pointer where converted result (temp in K x 10) will be written
+*/
+eDrvError hw_wrap_adcGetExtTemp(int16_t *pTempVal){
+    eDrvError exitStatus = drvUnknownError;
+    
     return exitStatus;
 }
 

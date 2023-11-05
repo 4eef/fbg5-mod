@@ -1,28 +1,29 @@
 /*!****************************************************************************
-* @file    delay.h
+* @file    drv_errors.h
 * @author  4eef
 * @version V1.0
-* @date    15.12.2020, 4eef
-* @brief   General delay functions
+* @date    05.11.2023, 4eef
+* @brief   --
 */
 
-#ifndef delay_H
-#define delay_H
+#ifndef drv_errors_H
+#define drv_errors_H
 
 /*!****************************************************************************
 * Include
 */
-#include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "app_errors.h"
-#include "hw_wrap.h"
 
 /*!****************************************************************************
-* Prototypes for the functions
+* User enum
 */
-eDrvError delay_us(uint16_t time);
-eDrvError delay_ms(uint16_t time);
+typedef enum{
+    drvNoError = 0,
+    drvBadParameter,
+    drvHwError,
+    drvUnknownError
+}eDrvError;
 
-#endif //delay_H
+#endif //drv_errors_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/

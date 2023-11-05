@@ -16,7 +16,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include "errors.h"
+#include "drv_errors.h"
 
 /*!****************************************************************************
 * Prototypes for the functions

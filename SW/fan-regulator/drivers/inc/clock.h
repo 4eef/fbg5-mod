@@ -14,8 +14,7 @@
 #include <avr/io.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "errors.h"
-#include "eeprom.h"
+#include "drv_errors.h"
 
 /*!****************************************************************************
 * Prototypes for the functions

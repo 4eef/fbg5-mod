@@ -15,34 +15,6 @@
 * @brief    Main routine
 */
 int main(void){
-//    eAppError appExStatus;
-//    bool isSysRst = false, isSysFailed = false;
-//    
-//    //Initialize diagnostics mechanisms
-//    appExStatus = mcu_control_init(&isSysRst);
-//    if(appExStatus != appNoError) isSysFailed = true;
-//    //Initialize system mechanisms
-//    appExStatus = application_init(isSysRst);
-//    if(appExStatus != appNoError) isSysFailed = true;
-//    
-//    while(1){
-//        //Handle system reset control
-//        appExStatus = mcu_control_rstSysCtrl(isSysFailed);
-//        //System routine
-//        if(appExStatus == appNoError){
-//            //Run application mechanisms
-//            appExStatus = application_run();
-//            if(appExStatus != appNoError){
-//                isSysFailed = true;
-//            }
-//            //Perform system cycle aligning
-//            appExStatus = mcu_control_cycleSync();
-//            if(appExStatus != appNoError){
-//                isSysFailed = true;
-//            }
-//        }
-//    }
-    
     return 0;
 }
 

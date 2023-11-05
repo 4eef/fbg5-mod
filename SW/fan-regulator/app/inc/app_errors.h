@@ -1,23 +1,19 @@
 /*!****************************************************************************
-* @file    errors.h
+* @file    app_errors.h
 * @author  4eef
 * @version V1.0
-* @date    22.12.2019, 4eef
+* @date    05.11.2023, 4eef
 * @brief   --
 */
 
-#ifndef errors_H
-#define errors_H
+#ifndef app_errors_H
+#define app_errors_H
 
 /*!****************************************************************************
 * Include
 */
 #include <stdint.h>
 #include <stdlib.h>
-
-/*!****************************************************************************
-* User define
-*/
 
 /*!****************************************************************************
 * User enum
@@ -32,12 +28,5 @@ typedef enum{
     appUnknownError
 }eAppError;
 
-typedef enum{
-    drvNoError = 0,
-    drvBadParameter,
-    drvHwError,
-    drvUnknownError
-}eDrvError;
-
-#endif //errors_H
+#endif //app_errors_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/

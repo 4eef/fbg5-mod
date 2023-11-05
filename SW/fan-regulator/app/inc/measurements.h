@@ -15,9 +15,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "errors.h"
+#include "app_errors.h"
 #include "hw_wrap.h"
-#include "eeprom.h"
 
 /*!****************************************************************************
 * User define

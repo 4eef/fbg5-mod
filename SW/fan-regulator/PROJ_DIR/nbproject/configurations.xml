@@ -6,10 +6,12 @@
                    projectFiles="true">
       <logicalFolder name="f4" displayName="app" projectFiles="true">
         <itemPath>../app/inc/delay.h</itemPath>
-        <itemPath>../app/inc/errors.h</itemPath>
         <itemPath>../app/inc/mcu_control.h</itemPath>
         <itemPath>../app/inc/measurements.h</itemPath>
         <itemPath>../app/inc/memory.h</itemPath>
+        <itemPath>../app/inc/app_errors.h</itemPath>
+        <itemPath>../app/inc/pwm.h</itemPath>
+        <itemPath>../app/inc/ext_settings.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="drivers" projectFiles="true">
         <itemPath>../drivers/inc/adc.h</itemPath>
@@ -19,9 +21,13 @@
         <itemPath>../drivers/inc/mcu_options.h</itemPath>
         <itemPath>../drivers/inc/timer.h</itemPath>
         <itemPath>../drivers/inc/watchdog.h</itemPath>
+        <itemPath>../drivers/inc/drv_errors.h</itemPath>
+        <itemPath>../drivers/inc/spi.h</itemPath>
+        <itemPath>../app/inc/usart.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="hw-wrap" projectFiles="true">
         <itemPath>../hw-wrap/inc/hw_wrap.h</itemPath>
+        <itemPath>../app/inc/thermistor_table.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="main" projectFiles="true">
         <itemPath>../main/inc/main.h</itemPath>
@@ -39,6 +45,8 @@
         <itemPath>../app/src/mcu_control.c</itemPath>
         <itemPath>../app/src/measurements.c</itemPath>
         <itemPath>../app/src/memory.c</itemPath>
+        <itemPath>../app/inc/pwm.c</itemPath>
+        <itemPath>../app/inc/ext_settings.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="drivers" projectFiles="true">
         <itemPath>../drivers/src/adc.c</itemPath>
@@ -48,6 +56,8 @@
         <itemPath>../drivers/src/mcu_options.c</itemPath>
         <itemPath>../drivers/src/timer.c</itemPath>
         <itemPath>../drivers/src/watchdog.c</itemPath>
+        <itemPath>../drivers/src/spi.c</itemPath>
+        <itemPath>../app/inc/usart.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="hw-wrap" projectFiles="true">
         <itemPath>../hw-wrap/src/hw_wrap.c</itemPath>

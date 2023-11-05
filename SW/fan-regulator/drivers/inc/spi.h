@@ -1,28 +1,29 @@
 /*!****************************************************************************
-* @file    delay.h
+* @file    spi.h
 * @author  4eef
 * @version V1.0
-* @date    15.12.2020, 4eef
-* @brief   General delay functions
+* @date    13.10.2020, 4eef
+* @brief   Serial peripheral interface driver for ATtiny3217
 */
 
-#ifndef delay_H
-#define delay_H
+#ifndef spi_H
+#define spi_H
 
 /*!****************************************************************************
 * Include
 */
-#include <stdbool.h>
+#include <avr/io.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "app_errors.h"
-#include "hw_wrap.h"
+#include "gpio.h"
+#include "drv_errors.h"
 
 /*!****************************************************************************
 * Prototypes for the functions
 */
-eDrvError delay_us(uint16_t time);
-eDrvError delay_ms(uint16_t time);
+eDrvError spi_init(void);
+eDrvError spi_receive(uint8_t *pRxData, uint16_t size);
+eDrvError spi_transmitReceive(uint8_t *pTxData, uint8_t *pRxData, uint16_t size);
 
-#endif //delay_H
+#endif //spi_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/

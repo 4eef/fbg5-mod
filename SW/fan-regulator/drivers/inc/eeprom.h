@@ -15,7 +15,7 @@
 #include <avr/io.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include "errors.h"
+#include "drv_errors.h"
 
 /*!****************************************************************************
 * User define

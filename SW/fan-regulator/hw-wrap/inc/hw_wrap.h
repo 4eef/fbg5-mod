@@ -15,7 +15,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "errors.h"
+#include "spi.h"
 #include "clock.h"
 #include "gpio.h"
 #include "adc.h"
@@ -23,6 +23,7 @@
 #include "mcu_options.h"
 #include "watchdog.h"
 #include "timer.h"
+#include "thermistor_table.h"
 
 /*!****************************************************************************
 * User define
@@ -74,8 +75,9 @@ eDrvError hw_wrap_spiTxRx(uint8_t *pTxData, uint8_t *pRxData, uint16_t size);
 eDrvError hw_wrap_pinSet(GPnum_type pin);
 eDrvError hw_wrap_pinReset(GPnum_type pin);
 eDrvError hw_wrap_pinSetDir(GPnum_type pin, bool pinDir);
-eDrvError hw_wrap_adcGetTemp(int16_t *pTempVal);
+eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal);
 eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal);
+eDrvError hw_wrap_adcGetExtTemp(int16_t *pTempVal);
 eDrvError hw_wrap_memoryErasePage(uint8_t *pAddr);
 eDrvError hw_wrap_memoryErase(void);
 eDrvError hw_wrap_memoryWrite(uint8_t *pAddr, uint8_t *pData, uint8_t num);
