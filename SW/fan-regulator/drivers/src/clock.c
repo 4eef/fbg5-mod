@@ -12,7 +12,7 @@
 #include "clock.h"
 
 /*!****************************************************************************
-* @brief    System clock settings initializer
+* @brief    System clock settings initializer (20 MHz CLK)
 */
 eDrvError clock_init(void){
     eDrvError exitStatus = drvUnknownError;
