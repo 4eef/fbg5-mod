@@ -15,10 +15,11 @@
 * @brief    Initialize timer counter A
 * @param    clk - clock prescaler setting
 * @param    wgMode - mode timer-counter should be initialized at
+* @param    ovfValue - top value counter will overflow on (0 sets max value)
 * @param    dir - counting direction
 * @param    top - top value counter should reach
 */
-eDrvError timer_initTimA(TCA_SINGLE_CLKSEL_t clk, TCA_SINGLE_WGMODE_t wgMode, TCA_SINGLE_DIR_t dir){
+eDrvError timer_initTimA(TCA_SINGLE_CLKSEL_t clk, TCA_SINGLE_WGMODE_t wgMode, uint8_t pwmOutputs, TCA_SINGLE_DIR_t dir){
     eDrvError exitStatus = drvUnknownError;
     
     //Perform initialization
@@ -27,6 +28,13 @@ eDrvError timer_initTimA(TCA_SINGLE_CLKSEL_t clk, TCA_SINGLE_WGMODE_t wgMode, TC
     TCA0.SINGLE.CTRLA |= clk;
     TCA0.SINGLE.CTRLB &= ~TCA_SINGLE_WGMODE_gm;
     TCA0.SINGLE.CTRLB |= wgMode;
+    //Set up the PWM or FRQ mode output pins
+    if(wgMode != TCA_SINGLE_WGMODE_NORMAL_gc){
+        TCA0.SINGLE.CTRLB &= ~(TCA_SINGLE_CMP2EN_bm | TCA_SINGLE_CMP1EN_bm | TCA_SINGLE_CMP0EN_bm);
+        pwmOutputs &= ~(TCA_SINGLE_ALUPD_bm | TCA_SINGLE_WGMODE_gm);
+        TCA0.SINGLE.CTRLB |= pwmOutputs;
+        TCA0.SINGLE.CTRLC |= TCA_SINGLE_CMP2OV_bm | TCA_SINGLE_CMP1OV_bm | TCA_SINGLE_CMP0OV_bm;
+    }
     TCA0.SINGLE.CTRLD &= ~TCA_SINGLE_SPLITM_bm;                                 //Single mode by default
     TCA0.SINGLE.CTRLECLR &= ~TCA_SINGLE_DIR_bm;
     TCA0.SINGLE.CTRLESET |= dir;
@@ -84,6 +92,27 @@ eDrvError timer_waitOvfTimA(uint16_t *pSysCycLen, bool *pIsCycBroken){
     return exitStatus;
 }
 
+
+/*!****************************************************************************
+* @brief    Sets output PWM value for particular output
+* @param    *pReg - pointer to one of CMP registers
+* @param    value - value to write
+*/
+eDrvError timer_setPwmValue(register16_t *pReg, uint16_t value){
+    eDrvError exitStatus = drvUnknownError;
+    
+    //Perform checks
+    if((pReg == NULL) || ((pReg != &TCA0.SINGLE.CMP0) && (pReg != &TCA0.SINGLE.CMP1) && (pReg != &TCA0.SINGLE.CMP2))){
+        return drvBadParameter;
+    }
+    //Update value
+    *pReg = value;
+    
+    exitStatus = drvNoError;
+    
+    return exitStatus;
+}
+
 /*!****************************************************************************
 * @brief    Initialize timer counter B
 * @param    *p - timer instance to initialize
@@ -112,6 +141,7 @@ eDrvError timer_initTimB(TCB_t *p, TCB_CNTMODE_t mode, TCB_CLKSEL_t clk){
 /*!****************************************************************************
 * @brief    Start counting
 * @param    *p - timer instance
+* @param    top - top value timer will overflow on
 */
 eDrvError timer_startTimB(TCB_t *p, uint16_t top){
     eDrvError exitStatus = drvUnknownError;
@@ -174,6 +204,63 @@ eDrvError timer_initTimD(void){
     //Perform initialization
 
     exitStatus = drvNoError;
+    return exitStatus;
+}
+
+/*!****************************************************************************
+* @brief    Start counting
+* @param    top - top value timer will overflow on
+*/
+eDrvError timer_startTimD(uint16_t top){
+    eDrvError exitStatus = drvUnknownError;
+    return exitStatus;
+}
+
+/*!****************************************************************************
+* @brief    Wait until timer counts to its set top
+* @param    *pSysCycLen - length of current cycle (in counter units)
+* @param    *pIsCycBroken - boolean flag representing broken counting cycle
+*/
+eDrvError timer_waitOvfTimD(uint16_t *pSysCycLen, bool *pIsCycBroken){
+    eDrvError exitStatus = drvUnknownError;
+    return exitStatus;
+}
+
+/*!****************************************************************************
+* @brief    Is particular timer-counter enabled?
+* @param    timCnt - timer-counter to ask
+* @param    *pIsEnable - pointer to boolean with result
+*/
+eDrvError timer_isTimEnabled(eTimNum timCnt, bool *pIsEnable){
+    eDrvError exitStatus = drvUnknownError;
+    
+    //Check pointer
+    if(pIsEnable == NULL){
+        return drvBadParameter;
+    }
+    
+    switch(timCnt){
+        case timCntA0:
+            *pIsEnable = ((TCA0.SINGLE.CTRLA & TCA_SINGLE_ENABLE_bm) > 0) ? true : false;
+            exitStatus = drvNoError;
+            break;
+        case timCntB0:
+            *pIsEnable = ((TCB0.CTRLA & TCB_ENABLE_bm) > 0) ? true : false;
+            exitStatus = drvNoError;
+            break;
+        case timCntB1:
+            *pIsEnable = ((TCB1.CTRLA & TCB_ENABLE_bm) > 0) ? true : false;
+            exitStatus = drvNoError;
+            break;
+        case timCntD0:
+            *pIsEnable = ((TCD0.CTRLA & TCD_ENABLE_bm) > 0) ? true : false;
+            exitStatus = drvNoError;
+            break;
+        default:
+            exitStatus = drvBadParameter;
+            break;
+    }
+        
     return exitStatus;
 }
 

@@ -73,11 +73,8 @@ typedef struct{
 }adcChannel_type;
 
 typedef enum{
-    ADC_TEMPSENSE,
-    ADC_TIM_RC,
-    ADC_MODE_JMP,
-    ADC_VIN,
-    ADC_HIGH
+    ADC_TSENSE,
+    ADC_NOT_USED
 }eAdcChNum_type;
 
 /*!****************************************************************************

@@ -20,7 +20,7 @@ eDrvError delay_us(uint16_t time){
     eDrvError exitStatus = drvUnknownError;
 
     //Check input
-    if(time > TIMER_DELAY_MAX){
+    if(time > CYCLE_TIMER_TOP_VALUE){
         return drvBadParameter;
     }
     //Perform delay
@@ -39,12 +39,12 @@ eDrvError delay_ms(uint16_t time){
     uint16_t i;
 
     //Check input
-    if(time > TIMER_DELAY_MAX){
+    if(time > CYCLE_TIMER_TOP_VALUE){
         return drvBadParameter;
     }
     //Perform delay
     for(i = 0; i < time; i++){
-        exitStatus = hw_wrap_timDelayUs(TIMER_DELAY_MAX);
+        exitStatus = hw_wrap_timDelayUs(CYCLE_TIMER_TOP_VALUE);
         if(exitStatus != drvNoError) return drvHwError;
     }
     

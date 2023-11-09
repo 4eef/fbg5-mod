@@ -15,6 +15,18 @@
 * @brief    Main routine
 */
 int main(void){
+    uint16_t pwmValue = 250;
+    
+    //Initialize hardware
+    hw_wrap_init();
+    //Tests
+    hw_wrap_setPwmVal(cmpOut0, pwmValue);
+    
+    //Cycle
+    while(1){
+//        hw_wrap_setPwmVal(cmpOut0, pwmValue);
+    }
+    
     return 0;
 }
 

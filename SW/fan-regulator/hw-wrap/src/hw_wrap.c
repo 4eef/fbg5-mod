@@ -2,7 +2,7 @@
 * @file    hw_wrap.c
 * @author  4eef
 * @version V1.0
-* @date    23.12.2019, 4eef
+* @date    09.11.2023
 * @brief   Wrapper functions to make abstraction layer between drivers and logic
 */
 
@@ -25,13 +25,15 @@ eDrvError hw_wrap_init(void){
 //    spi_init();
     //Set up ADCs
     adc_init(&ADC0, ADC_RESSEL_10BIT_gc, ADC_DUTYCYC_DUTY25_gc, ADC_ASDV_ASVOFF_gc, 0);
-    adc_init(&ADC1, ADC_RESSEL_10BIT_gc, ADC_DUTYCYC_DUTY25_gc, ADC_ASDV_ASVOFF_gc, 0);
-    //Set up sync timer
-    timer_initTimA(TCA_SINGLE_CLKSEL_DIV8_gc, TCA_SINGLE_WGMODE_NORMAL_gc, TCA_SINGLE_DIR_UP_gc);
-    //Set up a watchdog timer
-    watchdog_init(WDT_PERIOD_1KCLK_gc, WDT_WINDOW_OFF_gc);
+//    adc_init(&ADC1, ADC_RESSEL_10BIT_gc, ADC_DUTYCYC_DUTY25_gc, ADC_ASDV_ASVOFF_gc, 0);
+    //Set up PWM timer
+    timer_initTimA(TCA_SINGLE_CLKSEL_DIV1_gc, TCA_SINGLE_WGMODE_SINGLESLOPE_gc, TCA_SINGLE_CMP0EN_bm, TCA_SINGLE_DIR_UP_gc);
     //Set up a delay timer
     timer_initTimB(&TCB0, TCB_CNTMODE_SINGLE_gc, TCB_CLKSEL_CLKDIV2_gc);
+    //Set up a sync timer
+//    timer_initTimD();
+    //Set up a watchdog timer
+//    watchdog_init(WDT_PERIOD_1KCLK_gc, WDT_WINDOW_OFF_gc);
     
     exitStatus = drvNoError;
     return exitStatus;
@@ -138,7 +140,7 @@ eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal){
         return drvBadParameter;
     }
     //Get reading
-    adcExitStatus = adc_getSample(ADC_TEMPSENSE, &adcVal, &ovrSmp, &vRef);
+    adcExitStatus = adc_getSample(ADC_NOT_USED, &adcVal, &ovrSmp, &vRef);
     if(adcExitStatus != drvNoError) return drvHwError;
     //Process data
     temp = (uint32_t)adcVal * (uint32_t)vRef;
@@ -294,14 +296,13 @@ eDrvError hw_wrap_timSync(uint16_t *pSysCycLen, bool *pIsLoopBroken){
     eDrvError exitStatus = drvUnknownError;
     
     //Synchronize the cycle
-    exitStatus = timer_waitOvfTimA(pSysCycLen, pIsLoopBroken);
+    exitStatus = timer_waitOvfTimD(pSysCycLen, pIsLoopBroken);
     if(exitStatus == drvNoError){
-        exitStatus = timer_startTimA(TIMER_TOP_VALUE);
+        exitStatus = timer_startTimD(CYCLE_TIMER_TOP_VALUE);
     }
     
     return exitStatus;
 }
-
 
 /*!****************************************************************************
 * @brief    Delaying mechanism in microsecond resolution
@@ -313,15 +314,59 @@ eDrvError hw_wrap_timDelayUs(uint16_t time){
     bool cycBrkn;
     
     //Check input
-    if(time > TIMER_DELAY_MAX){
+    if(time > CYCLE_DELAY_TIMER_MAX){
         return drvBadParameter;
     }
-    drvExStatus = timer_startTimB(&TCB0, (time * TIMER_DELAY_MPLY_FACTOR));
+    drvExStatus = timer_startTimB(&TCB0, (time * CYCLE_DELAY_TIMER_MPLY_FACTOR));
     if(drvExStatus != drvNoError) return drvHwError;
     drvExStatus = timer_waitOvfTimB(&TCB0, &cycLen, &cycBrkn);
     if((drvExStatus != drvNoError) || (cycBrkn == true)) return drvHwError;
     
     exitStatus = drvNoError;
+    return exitStatus;
+}
+
+/*!****************************************************************************
+* @brief    Set output PWM value on the corresponding output
+* @param    regNum - compare register to be written
+* @param    value - compare value timer will switch the output (should not be higher than PWM_TIMER_TOP_VALUE)
+*/
+eDrvError hw_wrap_setPwmVal(eCmpOutNum regNum, uint16_t value){
+    eDrvError exitStatus = drvUnknownError, drvExitStatus;
+    bool isEnabled = false;
+    
+    //Check value
+    if(value > PWM_TIMER_TOP_VALUE){
+        return drvBadParameter;
+    }
+    //Check timer
+    drvExitStatus = timer_isTimEnabled(timCntA0, &isEnabled);
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
+    //Enable output
+    if(isEnabled == false){
+        drvExitStatus = timer_startTimA(PWM_TIMER_TOP_VALUE);
+        if(drvExitStatus != drvNoError){
+            return drvExitStatus;
+        }
+    }
+    //Update value
+    switch(regNum){
+        case cmpOut0:
+            exitStatus = timer_setPwmValue(&TCA0.SINGLE.CMP0, value);
+            break;
+        case cmpOut1:
+            exitStatus = timer_setPwmValue(&TCA0.SINGLE.CMP1, value);
+            break;
+        case cmpOut2:
+            exitStatus = timer_setPwmValue(&TCA0.SINGLE.CMP2, value);
+            break;
+        default:
+            exitStatus = drvBadParameter;
+            break;
+    }
+    
     return exitStatus;
 }
 

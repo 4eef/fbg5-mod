@@ -2,7 +2,7 @@
 * @file    hw_wrap.h
 * @author  4eef
 * @version V1.0
-* @date    23.12.2019, 4eef
+* @date    09.11.2023
 * @brief   Wrapper functions to make abstraction layer between drivers and logic
 */
 
@@ -58,13 +58,24 @@
 #define MEMORY_INITIALIZED_MARK             0xAE
 #define MEMORY_INITIALIZED_MARK_POS         (4 - 1)
 #define MODE_MEMORY_START_POS               (5 - 1)
-#define CYCLE_LEN_MS                        10
 #define SYSTEM_FREQ                         ((uint32_t)20000000)
-#define TIMER_20M_PRESC                     8
-#define TIMER_DELAY_MAX                     1000
-#define TIMER_DELAY_MPLY_FACTOR             10
-#define TIMER_TOP_VALUE                     (SYSTEM_FREQ / TIMER_20M_PRESC / TIMER_DELAY_MAX * CYCLE_LEN_MS)
 #define VDD_VAL                             ADC_VREF_VDD
+#define CYCLE_LEN_MS                        10
+#define CYCLE_TIMER_20M_PRESC               8
+#define CYCLE_DELAY_TIMER_MAX               1000
+#define CYCLE_DELAY_TIMER_MPLY_FACTOR       10
+#define CYCLE_TIMER_TOP_VALUE               (SYSTEM_FREQ / CYCLE_TIMER_20M_PRESC / CYCLE_DELAY_TIMER_MAX * CYCLE_LEN_MS)
+#define PWM_FREQ                            20000                               // Hz
+#define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_FREQ)
+
+/*!****************************************************************************
+* User enum
+*/
+typedef enum{
+    cmpOut0 = 0,
+    cmpOut1,
+    cmpOut2
+}eCmpOutNum;
 
 /*!****************************************************************************
 * Prototypes for the functions
@@ -87,6 +98,7 @@ eDrvError hw_wrap_getRstReason(bool *pHwRst, bool *pIsWdRst, bool *pIsSwRst, boo
 eDrvError hw_wrap_sysReset(void);
 eDrvError hw_wrap_timSync(uint16_t *pSysCycLen, bool *pIsLoopBroken);
 eDrvError hw_wrap_timDelayUs(uint16_t time);
+eDrvError hw_wrap_setPwmVal(eCmpOutNum regNum, uint16_t value);
 
 #endif //hw_wrap_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/

@@ -17,6 +17,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include "hw_wrap.h"
 
 /*!****************************************************************************
 * Prototypes for the functions
