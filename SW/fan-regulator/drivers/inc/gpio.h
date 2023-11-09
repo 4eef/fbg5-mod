@@ -3,8 +3,9 @@
 * @author   4eef
 * @version  V1.0
 * @date     05.10.2020
-* @brief    GPIO driver for ATtiny3217
+* @brief    GPIO driver for ATtiny1617 / ATtiny3217
 */
+
 #ifndef gpio_H
 #define gpio_H
 
@@ -33,41 +34,39 @@
 * User typedef
 */
 typedef struct{
-    PORT_t          *p;                                                         //PORT
-    uint8_t         npin;                                                       //MASK PIN
+    PORT_t          *p;                                                         //Port
+    uint8_t         npin;                                                       //Pin number
     uint8_t         pinDir;                                                     //Pin direction
-    uint8_t         initState;                                                  //NUMBER PIN
-    uint8_t         pinInvEn;                                                   //Initial state
-    uint8_t         pullUpEn;                                                   //Number alternate function
+    uint8_t         initState;                                                  //Initial state
+    uint8_t         pinInvEn;                                                   //Enable pin invert pin
+    uint8_t         pullUpEn;                                                   //Enable pull-up resistor
     PORT_ISC_t      inputSense;                                                 //Input sense control
 }pinMode_type;
 
 typedef enum{
 /*0 */  GP_UPDI,
-/*1 */  GP_MOSI,
-/*2 */  GP_MISO,
-/*3 */  GP_SCK,
-/*4 */  GP_RES0,
-/*5 */  GP_SSN,
-/*6 */  GP_RES1,
-/*7 */  GP_RES2,
-/*8 */  GP_T_SENSE,
-/*9 */  GP_RES3,
-/*10*/  GP_RES4,
-/*11*/  GP_RES5,
-/*12*/  GP_TIMING,
-/*13*/  GP_VIN_MEAS,
-/*14*/  GP_RES6,
-/*15*/  GP_RES7,
-/*16*/  GP_HIGH,
-/*17*/  GP_RES8,
-/*18*/  GP_MODE_SW,
-/*19*/  GP_RES9,
-/*20*/  GP_RES10,
-/*21*/  GP_RES11,
-        
-        
-GP_NOT_USED
+/*1 */  GP_RES0,
+/*2 */  GP_RES1,
+/*3 */  GP_RES2,
+/*4 */  GP_RES3,
+/*5 */  GP_RES4,
+/*6 */  GP_TSENSE,
+/*7 */  GP_RES5,
+/*8 */  GP_SWITCH,
+/*9 */  GP_RES6,
+/*10*/  GP_TXD,
+/*11*/  GP_RXD,
+/*12*/  GP_RES7,
+/*13*/  GP_RES8,
+/*14*/  GP_RES9,
+/*15*/  GP_RES10,
+/*16*/  GP_RES11,
+/*17*/  GP_RES12,
+/*18*/  GP_RES13,
+/*19*/  GP_RES14,
+/*20*/  GP_RES15,
+/*21*/  GP_RES16,
+/*22*/  GP_NOT_USED
 }GPnum_type;
 
 /*!****************************************************************************
