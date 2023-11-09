@@ -35,13 +35,13 @@ eAppError measurements_init(bool sysRst, bool *pModeSwitchEn){
         return appBadParameter;
     }
     //Measure the voltage on RC timing chain
-    adcRcExStatus = hw_wrap_adcGetVolt(ADC_TIM_RC, &rcVolt);
-    adcVinExStatus = hw_wrap_adcGetVolt(ADC_VIN, &vinValue);
-    adcHghExStatus = hw_wrap_adcGetVolt(ADC_HIGH, &hghValue);
-    adcSwJmpExStatus = hw_wrap_adcGetVolt(ADC_MODE_JMP, &swJmpValue);
+    adcRcExStatus = hw_wrap_adcGetVolt(ADC_NOT_USED, &rcVolt);
+    adcVinExStatus = hw_wrap_adcGetVolt(ADC_NOT_USED, &vinValue);
+    adcHghExStatus = hw_wrap_adcGetVolt(ADC_NOT_USED, &hghValue);
+    adcSwJmpExStatus = hw_wrap_adcGetVolt(ADC_NOT_USED, &swJmpValue);
     //Make measuring pin as power supply
-    hw_wrap_pinSetDir(GP_TIMING, true);
-    hw_wrap_pinSet(GP_TIMING);
+    hw_wrap_pinSetDir(GP_NOT_USED, true);
+    hw_wrap_pinSet(GP_NOT_USED);
     //Configure filters
     fltTemp.Nb = FILTER_16BIT - FILTER_A;
     fltVin.Nb = fltHigh.Nb = FILTER_16BIT - FILTER_A_MIN;
@@ -78,7 +78,7 @@ eAppError measurements_getOutputEnable(bool *pOutEn){
         exitStatus = appBadParameter;
     }else{
         //Get channel state value
-        drvExStatus = hw_wrap_adcGetVolt(ADC_VIN, &value);
+        drvExStatus = hw_wrap_adcGetVolt(ADC_NOT_USED, &value);
         if(drvExStatus != drvNoError){
             exitStatus = appResetNeeded;
         }else{
@@ -113,7 +113,7 @@ eAppError measurements_getHighBeamEnable(bool *pHghBmEn){
         exitStatus = appBadParameter;
     }else{
         //Get channel state value
-        drvExStatus = hw_wrap_adcGetVolt(ADC_HIGH, &value);
+        drvExStatus = hw_wrap_adcGetVolt(ADC_NOT_USED, &value);
         if(drvExStatus != drvNoError){
             exitStatus = appResetNeeded;
         }else{
@@ -148,7 +148,7 @@ eAppError measurements_getTemp(int16_t *pTemp){
         exitStatus = appBadParameter;
     }else{
         //Get channel state value
-        drvExStatus = hw_wrap_adcGetTemp(&value);
+        drvExStatus = hw_wrap_adcGetInnrTemp(&value);
         if(drvExStatus != drvNoError){
             exitStatus = appResetNeeded;
         }else{

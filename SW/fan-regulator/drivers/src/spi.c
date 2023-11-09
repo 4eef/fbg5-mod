@@ -59,14 +59,14 @@ eDrvError spi_receive(uint8_t *pRxData, uint16_t size){
         return drvBadParameter;
     }
     //Perform a transmission
-    gppin_reset(GP_SSN);
+    gppin_reset(GP_NOT_USED);
     for(i = 0; i < size; i++){
         SPI0.DATA = 0;
         while(!(SPI0.INTFLAGS & SPI_IF_bm));                                    //Wait until transfer completes; TODO: add a timer
         *pRxData = SPI0.DATA;
         pRxData++;
     }
-    gppin_set(GP_SSN);
+    gppin_set(GP_NOT_USED);
     
     exitStatus = drvNoError;
     return exitStatus;
@@ -90,7 +90,7 @@ eDrvError spi_transmitReceive(uint8_t *pTxData, uint8_t *pRxData, uint16_t size)
         return drvBadParameter;
     }
     //Perform a transmission
-    gppin_reset(GP_SSN);
+    gppin_reset(GP_NOT_USED);
     for(i = 0; i < size; i++){
         SPI0.DATA = *pTxData;
         pTxData++;
@@ -98,7 +98,7 @@ eDrvError spi_transmitReceive(uint8_t *pTxData, uint8_t *pRxData, uint16_t size)
         *pRxData = SPI0.DATA;
         pRxData++;
     }
-    gppin_set(GP_SSN);
+    gppin_set(GP_NOT_USED);
     
     exitStatus = drvNoError;
     return exitStatus;
