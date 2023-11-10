@@ -2,7 +2,7 @@
 * @file    main.h
 * @author  4eef
 * @version V1.0
-* @date    04.11.2023, 4eef
+* @date    04.11.2023
 * @brief   Main system routines
 */
 

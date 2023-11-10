@@ -1,14 +1,15 @@
 /*!****************************************************************************
- * @file    pwm.c
+ * @file    thermistor_table.c
  * @author  4eef
  * @version V1.0
- * @date    November 5, 2023
- * @brief   
+ * @date    November 10, 2023
+ * @brief   Table of resistance values for thermistor at temperatures
  */
 
 /*!****************************************************************************
  * Include
  */
+#include "thermistor_table.h"
 
 /*!****************************************************************************
  * Local function prototypes

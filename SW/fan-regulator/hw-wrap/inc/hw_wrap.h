@@ -65,7 +65,7 @@
 #define CYCLE_DELAY_TIMER_MAX               1000
 #define CYCLE_DELAY_TIMER_MPLY_FACTOR       10
 #define CYCLE_TIMER_TOP_VALUE               (SYSTEM_FREQ / CYCLE_TIMER_20M_PRESC / CYCLE_DELAY_TIMER_MAX * CYCLE_LEN_MS)
-#define PWM_FREQ                            20000                               // Hz
+#define PWM_FREQ                            16000                               // Hz
 #define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_FREQ)
 
 /*!****************************************************************************

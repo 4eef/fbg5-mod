@@ -1,36 +1,27 @@
 /*!****************************************************************************
- * @file    thermistor_table.h
+ * @file    pwm.c
  * @author  4eef
  * @version V1.0
  * @date    November 5, 2023
  * @brief   
  */
 
-#ifndef thermistor_table_H
-#define	thermistor_table_H
-
 /*!****************************************************************************
  * Include
  */
-#include <stdint.h>
-#include <stdlib.h>
-#include <stdbool.h>
+#include "pwm.h"
 
 /*!****************************************************************************
- * User define
+ * Local function prototypes
  */
 
 /*!****************************************************************************
- * User enum
+ * MEMORY
  */
 
 /*!****************************************************************************
- * User typedef
+ * @brief    
+ * @param    
  */
 
-/*!****************************************************************************
- * Prototypes for the functions
- */
-
-#endif //thermistor_table_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/

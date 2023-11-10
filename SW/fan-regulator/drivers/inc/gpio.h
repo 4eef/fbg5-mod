@@ -43,6 +43,9 @@ typedef struct{
     PORT_ISC_t      inputSense;                                                 //Input sense control
 }pinMode_type;
 
+/*!****************************************************************************
+* User enum
+*/
 typedef enum{
 /*0 */  GP_UPDI,
 /*1 */  GP_RES0,
