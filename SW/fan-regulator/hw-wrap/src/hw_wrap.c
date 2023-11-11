@@ -34,6 +34,8 @@ eDrvError hw_wrap_init(void){
 //    timer_initTimD();
     //Set up a watchdog timer
 //    watchdog_init(WDT_PERIOD_1KCLK_gc, WDT_WINDOW_OFF_gc);
+    //Initialize NTC table
+    thermistor_init();
     
     exitStatus = drvNoError;
     return exitStatus;

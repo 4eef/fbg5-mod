@@ -23,7 +23,7 @@
 #include "mcu_options.h"
 #include "watchdog.h"
 #include "timer.h"
-#include "thermistor_table.h"
+#include "thermistor.h"
 
 /*!****************************************************************************
 * User define

@@ -100,9 +100,8 @@ typedef enum{
 extern pinMode_type const pinsMode[];
 
 /*!****************************************************************************
-* Prototypes for the functions in gpio.c
+* Prototypes for the functions
 */
-eDrvError gppin_init(PORT_t *port, uint8_t npin, uint8_t pinDir, uint8_t initState, uint8_t pinInvEn, uint8_t pullUpEn, PORT_ISC_t inputSense);
 eDrvError gpio_init(void);
 
 #endif //gpio_H

@@ -23,8 +23,8 @@
         <itemPath>../drivers/inc/watchdog.h</itemPath>
         <itemPath>../drivers/inc/drv_errors.h</itemPath>
         <itemPath>../drivers/inc/spi.h</itemPath>
-        <itemPath>../drivers/inc/thermistor_table.h</itemPath>
         <itemPath>../drivers/inc/usart.h</itemPath>
+        <itemPath>../drivers/inc/thermistor.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="hw-wrap" projectFiles="true">
         <itemPath>../hw-wrap/inc/hw_wrap.h</itemPath>
@@ -57,8 +57,8 @@
         <itemPath>../drivers/src/timer.c</itemPath>
         <itemPath>../drivers/src/watchdog.c</itemPath>
         <itemPath>../drivers/src/spi.c</itemPath>
-        <itemPath>../drivers/src/thermistor_table.c</itemPath>
         <itemPath>../drivers/src/usart.c</itemPath>
+        <itemPath>../drivers/src/thermistor.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="hw-wrap" projectFiles="true">
         <itemPath>../hw-wrap/src/hw_wrap.c</itemPath>

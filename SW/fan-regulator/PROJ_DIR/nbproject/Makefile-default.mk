@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../app/src/delay.c ../app/src/mcu_control.c ../app/src/measurements.c ../app/src/memory.c ../drivers/src/adc.c ../drivers/src/clock.c ../drivers/src/eeprom.c ../drivers/src/gpio.c ../drivers/src/mcu_options.c ../drivers/src/timer.c ../drivers/src/watchdog.c ../drivers/src/spi.c ../hw-wrap/src/hw_wrap.c ../main/src/main.c ../app/src/ext_settings.c ../app/src/pwm.c ../drivers/src/thermistor_table.c ../drivers/src/usart.c
+SOURCEFILES_QUOTED_IF_SPACED=../app/src/delay.c ../app/src/mcu_control.c ../app/src/measurements.c ../app/src/memory.c ../app/src/ext_settings.c ../app/src/pwm.c ../drivers/src/adc.c ../drivers/src/clock.c ../drivers/src/eeprom.c ../drivers/src/gpio.c ../drivers/src/mcu_options.c ../drivers/src/timer.c ../drivers/src/watchdog.c ../drivers/src/spi.c ../drivers/src/usart.c ../hw-wrap/src/hw_wrap.c ../main/src/main.c ../drivers/src/thermistor.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1819418535/delay.o ${OBJECTDIR}/_ext/1819418535/mcu_control.o ${OBJECTDIR}/_ext/1819418535/measurements.o ${OBJECTDIR}/_ext/1819418535/memory.o ${OBJECTDIR}/_ext/649243985/adc.o ${OBJECTDIR}/_ext/649243985/clock.o ${OBJECTDIR}/_ext/649243985/eeprom.o ${OBJECTDIR}/_ext/649243985/gpio.o ${OBJECTDIR}/_ext/649243985/mcu_options.o ${OBJECTDIR}/_ext/649243985/timer.o ${OBJECTDIR}/_ext/649243985/watchdog.o ${OBJECTDIR}/_ext/649243985/spi.o ${OBJECTDIR}/_ext/2047881166/hw_wrap.o ${OBJECTDIR}/_ext/565612547/main.o ${OBJECTDIR}/_ext/1819418535/ext_settings.o ${OBJECTDIR}/_ext/1819418535/pwm.o ${OBJECTDIR}/_ext/649243985/thermistor_table.o ${OBJECTDIR}/_ext/649243985/usart.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1819418535/delay.o.d ${OBJECTDIR}/_ext/1819418535/mcu_control.o.d ${OBJECTDIR}/_ext/1819418535/measurements.o.d ${OBJECTDIR}/_ext/1819418535/memory.o.d ${OBJECTDIR}/_ext/649243985/adc.o.d ${OBJECTDIR}/_ext/649243985/clock.o.d ${OBJECTDIR}/_ext/649243985/eeprom.o.d ${OBJECTDIR}/_ext/649243985/gpio.o.d ${OBJECTDIR}/_ext/649243985/mcu_options.o.d ${OBJECTDIR}/_ext/649243985/timer.o.d ${OBJECTDIR}/_ext/649243985/watchdog.o.d ${OBJECTDIR}/_ext/649243985/spi.o.d ${OBJECTDIR}/_ext/2047881166/hw_wrap.o.d ${OBJECTDIR}/_ext/565612547/main.o.d ${OBJECTDIR}/_ext/1819418535/ext_settings.o.d ${OBJECTDIR}/_ext/1819418535/pwm.o.d ${OBJECTDIR}/_ext/649243985/thermistor_table.o.d ${OBJECTDIR}/_ext/649243985/usart.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1819418535/delay.o ${OBJECTDIR}/_ext/1819418535/mcu_control.o ${OBJECTDIR}/_ext/1819418535/measurements.o ${OBJECTDIR}/_ext/1819418535/memory.o ${OBJECTDIR}/_ext/1819418535/ext_settings.o ${OBJECTDIR}/_ext/1819418535/pwm.o ${OBJECTDIR}/_ext/649243985/adc.o ${OBJECTDIR}/_ext/649243985/clock.o ${OBJECTDIR}/_ext/649243985/eeprom.o ${OBJECTDIR}/_ext/649243985/gpio.o ${OBJECTDIR}/_ext/649243985/mcu_options.o ${OBJECTDIR}/_ext/649243985/timer.o ${OBJECTDIR}/_ext/649243985/watchdog.o ${OBJECTDIR}/_ext/649243985/spi.o ${OBJECTDIR}/_ext/649243985/usart.o ${OBJECTDIR}/_ext/2047881166/hw_wrap.o ${OBJECTDIR}/_ext/565612547/main.o ${OBJECTDIR}/_ext/649243985/thermistor.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1819418535/delay.o.d ${OBJECTDIR}/_ext/1819418535/mcu_control.o.d ${OBJECTDIR}/_ext/1819418535/measurements.o.d ${OBJECTDIR}/_ext/1819418535/memory.o.d ${OBJECTDIR}/_ext/1819418535/ext_settings.o.d ${OBJECTDIR}/_ext/1819418535/pwm.o.d ${OBJECTDIR}/_ext/649243985/adc.o.d ${OBJECTDIR}/_ext/649243985/clock.o.d ${OBJECTDIR}/_ext/649243985/eeprom.o.d ${OBJECTDIR}/_ext/649243985/gpio.o.d ${OBJECTDIR}/_ext/649243985/mcu_options.o.d ${OBJECTDIR}/_ext/649243985/timer.o.d ${OBJECTDIR}/_ext/649243985/watchdog.o.d ${OBJECTDIR}/_ext/649243985/spi.o.d ${OBJECTDIR}/_ext/649243985/usart.o.d ${OBJECTDIR}/_ext/2047881166/hw_wrap.o.d ${OBJECTDIR}/_ext/565612547/main.o.d ${OBJECTDIR}/_ext/649243985/thermistor.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1819418535/delay.o ${OBJECTDIR}/_ext/1819418535/mcu_control.o ${OBJECTDIR}/_ext/1819418535/measurements.o ${OBJECTDIR}/_ext/1819418535/memory.o ${OBJECTDIR}/_ext/649243985/adc.o ${OBJECTDIR}/_ext/649243985/clock.o ${OBJECTDIR}/_ext/649243985/eeprom.o ${OBJECTDIR}/_ext/649243985/gpio.o ${OBJECTDIR}/_ext/649243985/mcu_options.o ${OBJECTDIR}/_ext/649243985/timer.o ${OBJECTDIR}/_ext/649243985/watchdog.o ${OBJECTDIR}/_ext/649243985/spi.o ${OBJECTDIR}/_ext/2047881166/hw_wrap.o ${OBJECTDIR}/_ext/565612547/main.o ${OBJECTDIR}/_ext/1819418535/ext_settings.o ${OBJECTDIR}/_ext/1819418535/pwm.o ${OBJECTDIR}/_ext/649243985/thermistor_table.o ${OBJECTDIR}/_ext/649243985/usart.o
+OBJECTFILES=${OBJECTDIR}/_ext/1819418535/delay.o ${OBJECTDIR}/_ext/1819418535/mcu_control.o ${OBJECTDIR}/_ext/1819418535/measurements.o ${OBJECTDIR}/_ext/1819418535/memory.o ${OBJECTDIR}/_ext/1819418535/ext_settings.o ${OBJECTDIR}/_ext/1819418535/pwm.o ${OBJECTDIR}/_ext/649243985/adc.o ${OBJECTDIR}/_ext/649243985/clock.o ${OBJECTDIR}/_ext/649243985/eeprom.o ${OBJECTDIR}/_ext/649243985/gpio.o ${OBJECTDIR}/_ext/649243985/mcu_options.o ${OBJECTDIR}/_ext/649243985/timer.o ${OBJECTDIR}/_ext/649243985/watchdog.o ${OBJECTDIR}/_ext/649243985/spi.o ${OBJECTDIR}/_ext/649243985/usart.o ${OBJECTDIR}/_ext/2047881166/hw_wrap.o ${OBJECTDIR}/_ext/565612547/main.o ${OBJECTDIR}/_ext/649243985/thermistor.o
 
 # Source Files
-SOURCEFILES=../app/src/delay.c ../app/src/mcu_control.c ../app/src/measurements.c ../app/src/memory.c ../drivers/src/adc.c ../drivers/src/clock.c ../drivers/src/eeprom.c ../drivers/src/gpio.c ../drivers/src/mcu_options.c ../drivers/src/timer.c ../drivers/src/watchdog.c ../drivers/src/spi.c ../hw-wrap/src/hw_wrap.c ../main/src/main.c ../app/src/ext_settings.c ../app/src/pwm.c ../drivers/src/thermistor_table.c ../drivers/src/usart.c
+SOURCEFILES=../app/src/delay.c ../app/src/mcu_control.c ../app/src/measurements.c ../app/src/memory.c ../app/src/ext_settings.c ../app/src/pwm.c ../drivers/src/adc.c ../drivers/src/clock.c ../drivers/src/eeprom.c ../drivers/src/gpio.c ../drivers/src/mcu_options.c ../drivers/src/timer.c ../drivers/src/watchdog.c ../drivers/src/spi.c ../drivers/src/usart.c ../hw-wrap/src/hw_wrap.c ../main/src/main.c ../drivers/src/thermistor.c
 
 
 
@@ -112,6 +112,18 @@ ${OBJECTDIR}/_ext/1819418535/memory.o: ../app/src/memory.c  .generated_files/fla
 	@${RM} ${OBJECTDIR}/_ext/1819418535/memory.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/memory.o.d" -MT "${OBJECTDIR}/_ext/1819418535/memory.o.d" -MT ${OBJECTDIR}/_ext/1819418535/memory.o -o ${OBJECTDIR}/_ext/1819418535/memory.o ../app/src/memory.c 
 	
+${OBJECTDIR}/_ext/1819418535/ext_settings.o: ../app/src/ext_settings.c  .generated_files/flags/default/c0e2bd03367ff835ac3c2afc4368bab62bd18ae8 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
+	@${RM} ${OBJECTDIR}/_ext/1819418535/ext_settings.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1819418535/ext_settings.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/ext_settings.o.d" -MT "${OBJECTDIR}/_ext/1819418535/ext_settings.o.d" -MT ${OBJECTDIR}/_ext/1819418535/ext_settings.o -o ${OBJECTDIR}/_ext/1819418535/ext_settings.o ../app/src/ext_settings.c 
+	
+${OBJECTDIR}/_ext/1819418535/pwm.o: ../app/src/pwm.c  .generated_files/flags/default/ab5f6cdb3c8c49b258781658661a50e85133caa5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
+	@${RM} ${OBJECTDIR}/_ext/1819418535/pwm.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1819418535/pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/pwm.o.d" -MT "${OBJECTDIR}/_ext/1819418535/pwm.o.d" -MT ${OBJECTDIR}/_ext/1819418535/pwm.o -o ${OBJECTDIR}/_ext/1819418535/pwm.o ../app/src/pwm.c 
+	
 ${OBJECTDIR}/_ext/649243985/adc.o: ../drivers/src/adc.c  .generated_files/flags/default/b432e0b5d0592c9081da22498a3586b6c70ce463 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/649243985" 
 	@${RM} ${OBJECTDIR}/_ext/649243985/adc.o.d 
@@ -160,6 +172,12 @@ ${OBJECTDIR}/_ext/649243985/spi.o: ../drivers/src/spi.c  .generated_files/flags/
 	@${RM} ${OBJECTDIR}/_ext/649243985/spi.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/spi.o.d" -MT "${OBJECTDIR}/_ext/649243985/spi.o.d" -MT ${OBJECTDIR}/_ext/649243985/spi.o -o ${OBJECTDIR}/_ext/649243985/spi.o ../drivers/src/spi.c 
 	
+${OBJECTDIR}/_ext/649243985/usart.o: ../drivers/src/usart.c  .generated_files/flags/default/39b1a3fb4c59976c953535feac0ee8875668fbaf .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/_ext/649243985" 
+	@${RM} ${OBJECTDIR}/_ext/649243985/usart.o.d 
+	@${RM} ${OBJECTDIR}/_ext/649243985/usart.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/usart.o.d" -MT "${OBJECTDIR}/_ext/649243985/usart.o.d" -MT ${OBJECTDIR}/_ext/649243985/usart.o -o ${OBJECTDIR}/_ext/649243985/usart.o ../drivers/src/usart.c 
+	
 ${OBJECTDIR}/_ext/2047881166/hw_wrap.o: ../hw-wrap/src/hw_wrap.c  .generated_files/flags/default/ab763b14c9d4a5336ec5915250b28bc32e81a6d4 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/2047881166" 
 	@${RM} ${OBJECTDIR}/_ext/2047881166/hw_wrap.o.d 
@@ -172,29 +190,11 @@ ${OBJECTDIR}/_ext/565612547/main.o: ../main/src/main.c  .generated_files/flags/d
 	@${RM} ${OBJECTDIR}/_ext/565612547/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/565612547/main.o.d" -MT "${OBJECTDIR}/_ext/565612547/main.o.d" -MT ${OBJECTDIR}/_ext/565612547/main.o -o ${OBJECTDIR}/_ext/565612547/main.o ../main/src/main.c 
 	
-${OBJECTDIR}/_ext/1819418535/ext_settings.o: ../app/src/ext_settings.c  .generated_files/flags/default/c0e2bd03367ff835ac3c2afc4368bab62bd18ae8 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
-	@${RM} ${OBJECTDIR}/_ext/1819418535/ext_settings.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1819418535/ext_settings.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/ext_settings.o.d" -MT "${OBJECTDIR}/_ext/1819418535/ext_settings.o.d" -MT ${OBJECTDIR}/_ext/1819418535/ext_settings.o -o ${OBJECTDIR}/_ext/1819418535/ext_settings.o ../app/src/ext_settings.c 
-	
-${OBJECTDIR}/_ext/1819418535/pwm.o: ../app/src/pwm.c  .generated_files/flags/default/ab5f6cdb3c8c49b258781658661a50e85133caa5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
-	@${RM} ${OBJECTDIR}/_ext/1819418535/pwm.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1819418535/pwm.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/pwm.o.d" -MT "${OBJECTDIR}/_ext/1819418535/pwm.o.d" -MT ${OBJECTDIR}/_ext/1819418535/pwm.o -o ${OBJECTDIR}/_ext/1819418535/pwm.o ../app/src/pwm.c 
-	
-${OBJECTDIR}/_ext/649243985/thermistor_table.o: ../drivers/src/thermistor_table.c  .generated_files/flags/default/e1991a383ebadf1219d52051c2bad8a3703cd394 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/_ext/649243985/thermistor.o: ../drivers/src/thermistor.c  .generated_files/flags/default/d2e3b03f8f526b4f3fa81408f8ed8ff7e88c276d .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/649243985" 
-	@${RM} ${OBJECTDIR}/_ext/649243985/thermistor_table.o.d 
-	@${RM} ${OBJECTDIR}/_ext/649243985/thermistor_table.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/thermistor_table.o.d" -MT "${OBJECTDIR}/_ext/649243985/thermistor_table.o.d" -MT ${OBJECTDIR}/_ext/649243985/thermistor_table.o -o ${OBJECTDIR}/_ext/649243985/thermistor_table.o ../drivers/src/thermistor_table.c 
-	
-${OBJECTDIR}/_ext/649243985/usart.o: ../drivers/src/usart.c  .generated_files/flags/default/39b1a3fb4c59976c953535feac0ee8875668fbaf .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/_ext/649243985" 
-	@${RM} ${OBJECTDIR}/_ext/649243985/usart.o.d 
-	@${RM} ${OBJECTDIR}/_ext/649243985/usart.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/usart.o.d" -MT "${OBJECTDIR}/_ext/649243985/usart.o.d" -MT ${OBJECTDIR}/_ext/649243985/usart.o -o ${OBJECTDIR}/_ext/649243985/usart.o ../drivers/src/usart.c 
+	@${RM} ${OBJECTDIR}/_ext/649243985/thermistor.o.d 
+	@${RM} ${OBJECTDIR}/_ext/649243985/thermistor.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/thermistor.o.d" -MT "${OBJECTDIR}/_ext/649243985/thermistor.o.d" -MT ${OBJECTDIR}/_ext/649243985/thermistor.o -o ${OBJECTDIR}/_ext/649243985/thermistor.o ../drivers/src/thermistor.c 
 	
 else
 ${OBJECTDIR}/_ext/1819418535/delay.o: ../app/src/delay.c  .generated_files/flags/default/fadcc2e4ac79c7ca304bee37ee2100ae8c74e02a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
@@ -220,6 +220,18 @@ ${OBJECTDIR}/_ext/1819418535/memory.o: ../app/src/memory.c  .generated_files/fla
 	@${RM} ${OBJECTDIR}/_ext/1819418535/memory.o.d 
 	@${RM} ${OBJECTDIR}/_ext/1819418535/memory.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/memory.o.d" -MT "${OBJECTDIR}/_ext/1819418535/memory.o.d" -MT ${OBJECTDIR}/_ext/1819418535/memory.o -o ${OBJECTDIR}/_ext/1819418535/memory.o ../app/src/memory.c 
+	
+${OBJECTDIR}/_ext/1819418535/ext_settings.o: ../app/src/ext_settings.c  .generated_files/flags/default/c23bddfdb96a9495e819c70b9fa15cf37ef253ad .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
+	@${RM} ${OBJECTDIR}/_ext/1819418535/ext_settings.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1819418535/ext_settings.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/ext_settings.o.d" -MT "${OBJECTDIR}/_ext/1819418535/ext_settings.o.d" -MT ${OBJECTDIR}/_ext/1819418535/ext_settings.o -o ${OBJECTDIR}/_ext/1819418535/ext_settings.o ../app/src/ext_settings.c 
+	
+${OBJECTDIR}/_ext/1819418535/pwm.o: ../app/src/pwm.c  .generated_files/flags/default/ec43ad13700843363493cd97810de324e594c915 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
+	@${RM} ${OBJECTDIR}/_ext/1819418535/pwm.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1819418535/pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/pwm.o.d" -MT "${OBJECTDIR}/_ext/1819418535/pwm.o.d" -MT ${OBJECTDIR}/_ext/1819418535/pwm.o -o ${OBJECTDIR}/_ext/1819418535/pwm.o ../app/src/pwm.c 
 	
 ${OBJECTDIR}/_ext/649243985/adc.o: ../drivers/src/adc.c  .generated_files/flags/default/4409fb0cea7c5b8fee35e59c577c276893a87aa7 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/649243985" 
@@ -269,6 +281,12 @@ ${OBJECTDIR}/_ext/649243985/spi.o: ../drivers/src/spi.c  .generated_files/flags/
 	@${RM} ${OBJECTDIR}/_ext/649243985/spi.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/spi.o.d" -MT "${OBJECTDIR}/_ext/649243985/spi.o.d" -MT ${OBJECTDIR}/_ext/649243985/spi.o -o ${OBJECTDIR}/_ext/649243985/spi.o ../drivers/src/spi.c 
 	
+${OBJECTDIR}/_ext/649243985/usart.o: ../drivers/src/usart.c  .generated_files/flags/default/63c3fd7d0ecded7068dbd92f593215e4028d0da0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/_ext/649243985" 
+	@${RM} ${OBJECTDIR}/_ext/649243985/usart.o.d 
+	@${RM} ${OBJECTDIR}/_ext/649243985/usart.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/usart.o.d" -MT "${OBJECTDIR}/_ext/649243985/usart.o.d" -MT ${OBJECTDIR}/_ext/649243985/usart.o -o ${OBJECTDIR}/_ext/649243985/usart.o ../drivers/src/usart.c 
+	
 ${OBJECTDIR}/_ext/2047881166/hw_wrap.o: ../hw-wrap/src/hw_wrap.c  .generated_files/flags/default/1e76e48045075d1eec03dfa3f29af6287db8d41b .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/2047881166" 
 	@${RM} ${OBJECTDIR}/_ext/2047881166/hw_wrap.o.d 
@@ -281,29 +299,11 @@ ${OBJECTDIR}/_ext/565612547/main.o: ../main/src/main.c  .generated_files/flags/d
 	@${RM} ${OBJECTDIR}/_ext/565612547/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/565612547/main.o.d" -MT "${OBJECTDIR}/_ext/565612547/main.o.d" -MT ${OBJECTDIR}/_ext/565612547/main.o -o ${OBJECTDIR}/_ext/565612547/main.o ../main/src/main.c 
 	
-${OBJECTDIR}/_ext/1819418535/ext_settings.o: ../app/src/ext_settings.c  .generated_files/flags/default/c23bddfdb96a9495e819c70b9fa15cf37ef253ad .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
-	@${RM} ${OBJECTDIR}/_ext/1819418535/ext_settings.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1819418535/ext_settings.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/ext_settings.o.d" -MT "${OBJECTDIR}/_ext/1819418535/ext_settings.o.d" -MT ${OBJECTDIR}/_ext/1819418535/ext_settings.o -o ${OBJECTDIR}/_ext/1819418535/ext_settings.o ../app/src/ext_settings.c 
-	
-${OBJECTDIR}/_ext/1819418535/pwm.o: ../app/src/pwm.c  .generated_files/flags/default/ec43ad13700843363493cd97810de324e594c915 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/_ext/1819418535" 
-	@${RM} ${OBJECTDIR}/_ext/1819418535/pwm.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1819418535/pwm.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/1819418535/pwm.o.d" -MT "${OBJECTDIR}/_ext/1819418535/pwm.o.d" -MT ${OBJECTDIR}/_ext/1819418535/pwm.o -o ${OBJECTDIR}/_ext/1819418535/pwm.o ../app/src/pwm.c 
-	
-${OBJECTDIR}/_ext/649243985/thermistor_table.o: ../drivers/src/thermistor_table.c  .generated_files/flags/default/56193fc54c2cebbb2310caab39f8f1e3b1536ad5 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+${OBJECTDIR}/_ext/649243985/thermistor.o: ../drivers/src/thermistor.c  .generated_files/flags/default/7ad34117ac49524028329c035622f5331984da17 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/_ext/649243985" 
-	@${RM} ${OBJECTDIR}/_ext/649243985/thermistor_table.o.d 
-	@${RM} ${OBJECTDIR}/_ext/649243985/thermistor_table.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/thermistor_table.o.d" -MT "${OBJECTDIR}/_ext/649243985/thermistor_table.o.d" -MT ${OBJECTDIR}/_ext/649243985/thermistor_table.o -o ${OBJECTDIR}/_ext/649243985/thermistor_table.o ../drivers/src/thermistor_table.c 
-	
-${OBJECTDIR}/_ext/649243985/usart.o: ../drivers/src/usart.c  .generated_files/flags/default/63c3fd7d0ecded7068dbd92f593215e4028d0da0 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
-	@${MKDIR} "${OBJECTDIR}/_ext/649243985" 
-	@${RM} ${OBJECTDIR}/_ext/649243985/usart.o.d 
-	@${RM} ${OBJECTDIR}/_ext/649243985/usart.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/usart.o.d" -MT "${OBJECTDIR}/_ext/649243985/usart.o.d" -MT ${OBJECTDIR}/_ext/649243985/usart.o -o ${OBJECTDIR}/_ext/649243985/usart.o ../drivers/src/usart.c 
+	@${RM} ${OBJECTDIR}/_ext/649243985/thermistor.o.d 
+	@${RM} ${OBJECTDIR}/_ext/649243985/thermistor.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O0 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -I"../app/inc" -I"../drivers/inc" -I"../hw-wrap/inc" -I"../main/inc" -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3 -mconst-data-in-progmem     -MD -MP -MF "${OBJECTDIR}/_ext/649243985/thermistor.o.d" -MT "${OBJECTDIR}/_ext/649243985/thermistor.o.d" -MT ${OBJECTDIR}/_ext/649243985/thermistor.o -o ${OBJECTDIR}/_ext/649243985/thermistor.o ../drivers/src/thermistor.c 
 	
 endif
 
