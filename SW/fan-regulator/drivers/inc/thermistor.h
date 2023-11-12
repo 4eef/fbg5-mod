@@ -107,8 +107,8 @@
 #define R2904P150                           0.013321
 #define R2904P155                           0.011754
 #define NTC_R25_OHM                         10000
-#define MPLY_FACTOR                         10
-#define TEMP_STEP                           (5 * MPLY_FACTOR)
+#define TEMP_R_MPLY_FACTOR                  10
+#define TEMP_STEP                           (5 * TEMP_R_MPLY_FACTOR)
 
 /*!****************************************************************************
  * User typedef
@@ -121,7 +121,7 @@ typedef struct{
 /*!****************************************************************************
  * Macro functions
  */
-#define writeVal(temp, res) {(temp * MPLY_FACTOR), (res * NTC_R25_OHM * MPLY_FACTOR)}
+#define writeVal(temp, res) {(temp * TEMP_R_MPLY_FACTOR), (res * NTC_R25_OHM * TEMP_R_MPLY_FACTOR)}
 
 /*!****************************************************************************
  * Extern variables
@@ -132,7 +132,7 @@ extern tempRes_type const ntcTable[];
  * Prototypes for the functions
  */
 eDrvError thermistor_init(void);
-eDrvError thermistor_getTemp(uint32_t res, int32_t *pTemp);
+eDrvError thermistor_getTemp(uint32_t res, int16_t *pTemp);
 
 #endif //thermistor_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/

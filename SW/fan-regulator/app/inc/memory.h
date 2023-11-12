@@ -39,8 +39,6 @@ typedef struct{
 * Prototypes for the functions
 */
 eAppError memory_init(void);
-eAppError memory_getPwrLvl(uint8_t *pPwMode);
-eAppError memory_setPwrLvl(uint8_t pwMode);
 
 #endif //memory_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/

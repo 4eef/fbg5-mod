@@ -147,8 +147,8 @@ eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal){
     //Process data
     temp = (uint32_t)adcVal * (uint32_t)vRef;
     temp = temp / ((ADC_RESOLUTION_LSB * ovrSmp) - 1);
-    //Output
-    *pTempVal = ((temp - TMP235_START_TEMP_MV) / TMP235_TEMP_COEFF_X10) + TMP235_START_TEMP_CELSIUM_X10;
+    //Output (needs to be edited in order to use it)
+    *pTempVal = ((temp - 1) / 1) + 1;
     
     exitStatus = drvNoError;
     return exitStatus;
@@ -187,8 +187,30 @@ eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal){
 * @param    Pointer where converted result (temp in K x 10) will be written
 */
 eDrvError hw_wrap_adcGetExtTemp(int16_t *pTempVal){
-    eDrvError exitStatus = drvUnknownError;
+    eDrvError exitStatus = drvUnknownError, drvExitStatus;
+    uint32_t temp, vNtc, rNtc;
+    uint16_t adcVal, vRef, vDiff;
+    uint8_t ovrSmp;
     
+    //Perform check
+    if(pTempVal == NULL){
+        return drvBadParameter;
+    }
+    //Get reading
+    drvExitStatus = adc_getSample(ADC_TSENSE, &adcVal, &ovrSmp, &vRef);
+    if(drvExitStatus != drvNoError) return drvHwError;
+    //Process data
+    temp = (uint32_t)adcVal * (uint32_t)vRef;
+    vNtc = temp / ((ADC_RESOLUTION_LSB * ovrSmp) - 1);
+    temp = R1_TEMP_SENSE_OHM * TEMP_R_MPLY_FACTOR * vNtc;
+    vDiff = vRef - vNtc;
+    if(vDiff == 0) vDiff = 1;
+    rNtc = temp / vDiff;
+    //Output
+    drvExitStatus = thermistor_getTemp(rNtc, pTempVal);
+    if(drvExitStatus != drvNoError) return drvHwError;
+    
+    exitStatus = drvNoError;
     return exitStatus;
 }
 

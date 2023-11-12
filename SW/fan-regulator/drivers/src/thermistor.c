@@ -80,7 +80,7 @@ eDrvError thermistor_init(void){
  * @param   res - measured NTC resistance (multiplied by MPLY_FACTOR)
  * @param   pTemp - pointer to returned temperature value (multiplied by MPLY_FACTOR)
  */
-eDrvError thermistor_getTemp(uint32_t res, int32_t *pTemp){
+eDrvError thermistor_getTemp(uint32_t res, int16_t *pTemp){
     eDrvError exitStatus = drvUnknownError;
     uint32_t residual, resolution, result;
     uint8_t i;
@@ -93,7 +93,7 @@ eDrvError thermistor_getTemp(uint32_t res, int32_t *pTemp){
     i = 0;
     while(i < ntcPoints){
         if(ntcTable[i].resistance <= res){
-            break;                                                              //Then value is between (i-1) and (i))
+            break;                                                              //Then value is between (i-1) and (i)
         }
         i++;
     }

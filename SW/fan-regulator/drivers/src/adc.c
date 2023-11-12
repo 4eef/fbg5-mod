@@ -15,11 +15,7 @@
 * MEMORY
 */
 adcChannel_type const adcChannels[] = {
-    adcChInit(ADC0, ADC_INITDLY_DLY0_gc, ADC_MUXPOS_AIN11_gc, 0, 1, 0, ADC_PRESC_DIV16_gc, ADC_REFSEL_VDDREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//Temperature sensor
-    adcChInit(ADC0, ADC_INITDLY_DLY0_gc, ADC_MUXPOS_AIN9_gc, 0, 1, 0, ADC_PRESC_DIV16_gc, ADC_REFSEL_VDDREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//Timing RC chain
-    adcChInit(ADC1, ADC_INITDLY_DLY0_gc, ADC_MUXPOS_AIN8_gc, 0, 1, 0, ADC_PRESC_DIV16_gc, ADC_REFSEL_VDDREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//Mode switch jumper
-    adcChInit(ADC0, ADC_INITDLY_DLY0_gc, ADC_MUXPOS_AIN8_gc, 0, 1, 0, ADC_PRESC_DIV16_gc, ADC_REFSEL_VDDREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//Input voltage measurement
-    adcChInit(ADC1, ADC_INITDLY_DLY0_gc, ADC_MUXPOS_AIN6_gc, 0, 1, 0, ADC_PRESC_DIV16_gc, ADC_REFSEL_VDDREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//High beam enable line
+    adcChInit(ADC0, ADC_INITDLY_DLY0_gc, ADC_MUXPOS_AIN6_gc, 0, 1, 0, ADC_PRESC_DIV16_gc, ADC_REFSEL_VDDREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//Temperature sensor
 };
 
 /*!****************************************************************************

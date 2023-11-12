@@ -27,11 +27,6 @@
 #define FILTER_A                            (FILTER_A_MIN + ((FILTER_A_MAX - FILTER_A_MIN) / FILTER_K_DIV))
 #define FILTER_16BIT                        65536
 #define FILTER_RESOLUTION                   16
-#define THRESHOLD_MV                        7500
-#define HYSTERESIS_MV                       300
-#define ENABLE_CHANNEL_ADC_VAL              (((uint32_t)THRESHOLD_MV * R_IN_DN_KOHM) / (R_IN_DN_KOHM + R_IN_UP_KOHM))
-#define ENABLE_HYSTERESIS_ADC_VAL           (((uint32_t)HYSTERESIS_MV * R_IN_DN_KOHM) / (R_IN_DN_KOHM + R_IN_UP_KOHM))
-#define SELECTOR_MODE_SW_V                  (((uint32_t)VDD_VAL * 10) / 100)
 
 /*!****************************************************************************
 * User typedef
@@ -47,9 +42,7 @@ typedef struct{
 /*!****************************************************************************
 * Prototypes for the functions
 */
-eAppError measurements_init(bool sysRst, bool *pModeSwitchEn);
-eAppError measurements_getOutputEnable(bool *pOutEn);
-eAppError measurements_getHighBeamEnable(bool *pHghBmEn);
+eAppError measurements_init(void);
 eAppError measurements_getTemp(int16_t *pTemp);
 
 #endif //measurements_H

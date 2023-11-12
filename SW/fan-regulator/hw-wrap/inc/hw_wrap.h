@@ -28,36 +28,17 @@
 /*!****************************************************************************
 * User define
 */
-#define R_IN_DN_KOHM                        15
-#define R_IN_UP_KOHM                        91
-#define R_I_OUT_SENSE_MILLIOHM              47
-#define R_I_SW_SENSE_MILLIOHM               20
-#define ADC_TEMP_MPLY_FACTOR                10
 #define ADC_TEMP_RSH_VAL                    3
 #define ADC_TEMP_CAL_RSH_VAL                8
-#define TMP235_START_TEMP_CELSIUM_X10       (-400)
-#define TMP235_TEMP_COEFF_X10               1
-#define TMP235_START_TEMP_MV                100
 #define KELVIN_CELSIUM_ZERO_X10             2732
 #define MEMORY_START_ADDR                   USER_SIGNATURES_START
 #define MEMORY_END_ADDR                     USER_SIGNATURES_END
 #define MEMORY_SIZE                         USER_SIGNATURES_SIZE
 #define MEMORY_PAGE_SIZE                    USER_SIGNATURES_PAGE_SIZE
-#define DIAGNOSTICS_INFO_ADDR               MEMORY_START_ADDR
-#define DIAGNOSTICS_INFO_SIZE               4
-#define MODE_MEMORY_START_ADDR              (DIAGNOSTICS_INFO_ADDR + DIAGNOSTICS_INFO_SIZE)
-#define MODE_MEMORY_END_ADDR                MEMORY_END_ADDR
-#define MODE_MEMORY_SIZE                    (MEMORY_SIZE - DIAGNOSTICS_INFO_SIZE)
-#define MODE_1_MEMORY_MARK                  0xAA
-#define MODE_2_MEMORY_MARK                  0xBB
-#define MODE_3_MEMORY_MARK                  0xCC
-#define MODE_DATA_NUM                       1
-#define MODE_1_CURRENT                      1050
-#define MODE_2_CURRENT                      2100
-#define MODE_3_CURRENT                      3150
 #define MEMORY_INITIALIZED_MARK             0xAE
 #define MEMORY_INITIALIZED_MARK_POS         (4 - 1)
-#define MODE_MEMORY_START_POS               (5 - 1)
+#define DIAGNOSTICS_INFO_ADDR               MEMORY_START_ADDR
+#define DIAGNOSTICS_INFO_SIZE               4
 #define SYSTEM_FREQ                         ((uint32_t)20000000)
 #define VDD_VAL                             ADC_VREF_VDD
 #define CYCLE_LEN_MS                        10
@@ -67,6 +48,7 @@
 #define CYCLE_TIMER_TOP_VALUE               (SYSTEM_FREQ / CYCLE_TIMER_20M_PRESC / CYCLE_DELAY_TIMER_MAX * CYCLE_LEN_MS)
 #define PWM_FREQ                            16000                               // Hz
 #define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_FREQ)
+#define R1_TEMP_SENSE_OHM                   1000
 
 /*!****************************************************************************
 * User enum
