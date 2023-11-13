@@ -77,8 +77,8 @@ eDrvError thermistor_init(void){
 
 /*!****************************************************************************
  * @brief   Get actual temperature value from the table by resistance
- * @param   res - measured NTC resistance (multiplied by MPLY_FACTOR)
- * @param   pTemp - pointer to returned temperature value (multiplied by MPLY_FACTOR)
+ * @param   res - measured NTC resistance (multiplied by THERMISTOR_MPLY_FACTOR)
+ * @param   pTemp - pointer to returned temperature value (multiplied by THERMISTOR_MPLY_FACTOR)
  */
 eDrvError thermistor_getTemp(uint32_t res, int16_t *pTemp){
     eDrvError exitStatus = drvUnknownError;

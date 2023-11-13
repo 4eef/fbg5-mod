@@ -107,8 +107,8 @@
 #define R2904P150                           0.013321
 #define R2904P155                           0.011754
 #define NTC_R25_OHM                         10000
-#define TEMP_R_MPLY_FACTOR                  10
-#define TEMP_STEP                           (5 * TEMP_R_MPLY_FACTOR)
+#define THERMISTOR_MPLY_FACTOR              10
+#define TEMP_STEP                           (5 * THERMISTOR_MPLY_FACTOR)
 
 /*!****************************************************************************
  * User typedef
@@ -121,7 +121,7 @@ typedef struct{
 /*!****************************************************************************
  * Macro functions
  */
-#define writeVal(temp, res) {(temp * TEMP_R_MPLY_FACTOR), (res * NTC_R25_OHM * TEMP_R_MPLY_FACTOR)}
+#define writeVal(temp, res) {(temp * THERMISTOR_MPLY_FACTOR), (res * NTC_R25_OHM * THERMISTOR_MPLY_FACTOR)}
 
 /*!****************************************************************************
  * Extern variables

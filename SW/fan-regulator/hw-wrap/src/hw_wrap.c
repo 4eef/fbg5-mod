@@ -129,10 +129,10 @@ eDrvError hw_wrap_pinSetDir(GPnum_type pin, bool pinDir){
 
 /*!****************************************************************************
 * @brief    Get reading of inner temperature sensor
-* @param    Pointer where converted result (temp in K x 10) will be written
+* @param    Pointer where converted result (temp in C x 10) will be written
 */
 eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal){
-    eDrvError exitStatus = drvUnknownError, adcExitStatus;
+    eDrvError exitStatus = drvUnknownError, drvExitStatus;
     uint32_t temp;
     uint16_t adcVal, vRef;
     uint8_t ovrSmp;
@@ -142,8 +142,8 @@ eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal){
         return drvBadParameter;
     }
     //Get reading
-    adcExitStatus = adc_getSample(ADC_NOT_USED, &adcVal, &ovrSmp, &vRef);
-    if(adcExitStatus != drvNoError) return drvHwError;
+    drvExitStatus = adc_getSample(ADC_NOT_USED, &adcVal, &ovrSmp, &vRef);
+    if(drvExitStatus != drvNoError) return drvExitStatus;
     //Process data
     temp = (uint32_t)adcVal * (uint32_t)vRef;
     temp = temp / ((ADC_RESOLUTION_LSB * ovrSmp) - 1);
@@ -160,7 +160,7 @@ eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal){
 * @param    Pointer where converted result will be written
 */
 eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal){
-    eDrvError exitStatus = drvUnknownError, adcExitStatus;
+    eDrvError exitStatus = drvUnknownError, drvExitStatus;
     uint32_t temp;
     uint16_t adcVal, vRef;
     uint8_t ovrSmp;
@@ -170,8 +170,8 @@ eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal){
         return drvBadParameter;
     }
     //Get reading
-    adcExitStatus = adc_getSample(channel, &adcVal, &ovrSmp, &vRef);
-    if(adcExitStatus != drvNoError) return drvHwError;
+    drvExitStatus = adc_getSample(channel, &adcVal, &ovrSmp, &vRef);
+    if(drvExitStatus != drvNoError) return drvExitStatus;
     //Convert results to voltage
     temp = (uint32_t)adcVal * (uint32_t)vRef;
     temp = temp / ((ADC_RESOLUTION_LSB * ovrSmp) - 1);
@@ -184,9 +184,9 @@ eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal){
 
 /*!****************************************************************************
 * @brief    Get reading of external temperature sensor
-* @param    Pointer where converted result (temp in K x 10) will be written
+* @param    Pointer where converted result (temp in C x THERMISTOR_MPLY_FACTOR) will be written
 */
-eDrvError hw_wrap_adcGetExtTemp(int16_t *pTempVal){
+eDrvError hw_wrap_adcGetNtcTemp(int16_t *pTempVal){
     eDrvError exitStatus = drvUnknownError, drvExitStatus;
     uint32_t temp, vNtc, rNtc;
     uint16_t adcVal, vRef, vDiff;
@@ -198,17 +198,17 @@ eDrvError hw_wrap_adcGetExtTemp(int16_t *pTempVal){
     }
     //Get reading
     drvExitStatus = adc_getSample(ADC_TSENSE, &adcVal, &ovrSmp, &vRef);
-    if(drvExitStatus != drvNoError) return drvHwError;
+    if(drvExitStatus != drvNoError) return drvExitStatus;
     //Process data
     temp = (uint32_t)adcVal * (uint32_t)vRef;
     vNtc = temp / ((ADC_RESOLUTION_LSB * ovrSmp) - 1);
-    temp = R1_TEMP_SENSE_OHM * TEMP_R_MPLY_FACTOR * vNtc;
+    temp = R1_TEMP_SENSE_OHM * THERMISTOR_MPLY_FACTOR * vNtc;
     vDiff = vRef - vNtc;
     if(vDiff == 0) vDiff = 1;
     rNtc = temp / vDiff;
     //Output
     drvExitStatus = thermistor_getTemp(rNtc, pTempVal);
-    if(drvExitStatus != drvNoError) return drvHwError;
+    if(drvExitStatus != drvNoError) return drvExitStatus;
     
     exitStatus = drvNoError;
     return exitStatus;
@@ -351,16 +351,18 @@ eDrvError hw_wrap_timDelayUs(uint16_t time){
 }
 
 /*!****************************************************************************
-* @brief    Set output PWM value on the corresponding output
-* @param    regNum - compare register to be written
-* @param    value - compare value timer will switch the output (should not be higher than PWM_TIMER_TOP_VALUE)
+* @brief    Set output PWM width on the output
+* @param    outNum - output compare pin to be set
+* @param    width - PWM width (0 to PWM_MAX_WIDTH)
 */
-eDrvError hw_wrap_setPwmVal(eCmpOutNum regNum, uint16_t value){
+eDrvError hw_wrap_setPwmWidth(eCmpOutNum outNum, uint16_t width){
     eDrvError exitStatus = drvUnknownError, drvExitStatus;
     bool isEnabled = false;
+    uint32_t temp;
+    uint16_t value;
     
     //Check value
-    if(value > PWM_TIMER_TOP_VALUE){
+    if(width > PWM_MAX_WIDTH){
         return drvBadParameter;
     }
     //Check timer
@@ -375,8 +377,12 @@ eDrvError hw_wrap_setPwmVal(eCmpOutNum regNum, uint16_t value){
             return drvExitStatus;
         }
     }
+    //Calculate value
+    temp = width * PWM_TIMER_TOP_VALUE;
+    temp = temp / PWM_MAX_WIDTH;
+    value = temp;
     //Update value
-    switch(regNum){
+    switch(outNum){
         case cmpOut0:
             exitStatus = timer_setPwmValue(&TCA0.SINGLE.CMP0, value);
             break;

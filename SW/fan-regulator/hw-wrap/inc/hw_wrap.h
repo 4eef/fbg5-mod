@@ -48,6 +48,8 @@
 #define CYCLE_TIMER_TOP_VALUE               (SYSTEM_FREQ / CYCLE_TIMER_20M_PRESC / CYCLE_DELAY_TIMER_MAX * CYCLE_LEN_MS)
 #define PWM_FREQ                            16000                               // Hz
 #define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_FREQ)
+#define PWM_MPLY_FACTOR                     10
+#define PWM_MAX_WIDTH                       (100 * PWM_MPLY_FACTOR)
 #define R1_TEMP_SENSE_OHM                   1000
 
 /*!****************************************************************************
@@ -70,7 +72,7 @@ eDrvError hw_wrap_pinReset(GPnum_type pin);
 eDrvError hw_wrap_pinSetDir(GPnum_type pin, bool pinDir);
 eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal);
 eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal);
-eDrvError hw_wrap_adcGetExtTemp(int16_t *pTempVal);
+eDrvError hw_wrap_adcGetNtcTemp(int16_t *pTempVal);
 eDrvError hw_wrap_memoryErasePage(uint8_t *pAddr);
 eDrvError hw_wrap_memoryErase(void);
 eDrvError hw_wrap_memoryWrite(uint8_t *pAddr, uint8_t *pData, uint8_t num);
@@ -80,7 +82,7 @@ eDrvError hw_wrap_getRstReason(bool *pHwRst, bool *pIsWdRst, bool *pIsSwRst, boo
 eDrvError hw_wrap_sysReset(void);
 eDrvError hw_wrap_timSync(uint16_t *pSysCycLen, bool *pIsLoopBroken);
 eDrvError hw_wrap_timDelayUs(uint16_t time);
-eDrvError hw_wrap_setPwmVal(eCmpOutNum regNum, uint16_t value);
+eDrvError hw_wrap_setPwmWidth(eCmpOutNum outNum, uint16_t width);
 
 #endif //hw_wrap_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/
