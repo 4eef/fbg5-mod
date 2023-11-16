@@ -7,6 +7,8 @@
             <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/hw-wrap/src/hw_wrap.c</file>
             <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/main/src/main.c</file>
             <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/hw-wrap/inc/hw_wrap.h</file>
+            <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/tinyAVR-1ser-drv/src/rtc.c</file>
+            <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/tinyAVR-1ser-drv/inc/rtc.h</file>
         </group>
     </open-files>
 </project-private>

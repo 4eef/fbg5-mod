@@ -22,13 +22,13 @@
         <itemPath>../tinyAVR-1ser-drv/inc/mcu_options.h</itemPath>
         <itemPath>../tinyAVR-1ser-drv/inc/rtc.h</itemPath>
         <itemPath>../tinyAVR-1ser-drv/inc/spi.h</itemPath>
-        <itemPath>../tinyAVR-1ser-drv/inc/thermistor.h</itemPath>
         <itemPath>../tinyAVR-1ser-drv/inc/timer.h</itemPath>
         <itemPath>../tinyAVR-1ser-drv/inc/usart.h</itemPath>
         <itemPath>../tinyAVR-1ser-drv/inc/watchdog.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="hw-wrap" projectFiles="true">
         <itemPath>../hw-wrap/inc/hw_wrap.h</itemPath>
+        <itemPath>../hw-wrap/inc/thermistor.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="main" projectFiles="true">
         <itemPath>../main/inc/main.h</itemPath>
@@ -57,13 +57,13 @@
         <itemPath>../tinyAVR-1ser-drv/src/mcu_options.c</itemPath>
         <itemPath>../tinyAVR-1ser-drv/src/rtc.c</itemPath>
         <itemPath>../tinyAVR-1ser-drv/src/spi.c</itemPath>
-        <itemPath>../tinyAVR-1ser-drv/src/thermistor.c</itemPath>
         <itemPath>../tinyAVR-1ser-drv/src/timer.c</itemPath>
         <itemPath>../tinyAVR-1ser-drv/src/usart.c</itemPath>
         <itemPath>../tinyAVR-1ser-drv/src/watchdog.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="hw-wrap" projectFiles="true">
         <itemPath>../hw-wrap/src/hw_wrap.c</itemPath>
+        <itemPath>../hw-wrap/src/thermistor.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="main" projectFiles="true">
         <itemPath>../main/src/main.c</itemPath>
