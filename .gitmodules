@@ -1,0 +1,3 @@
+[submodule "SW/fan-regulator/tinyAVR-1ser-drv"]
+	path = SW/fan-regulator/tinyAVR-1ser-drv
+	url = git@github.com:4eef/tinyAVR-1ser-drv.git

@@ -24,6 +24,7 @@
 #include "watchdog.h"
 #include "timer.h"
 #include "thermistor.h"
+#include "rtc.h"
 
 /*!****************************************************************************
 * User define
