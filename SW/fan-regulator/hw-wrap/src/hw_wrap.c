@@ -18,7 +18,7 @@ eDrvError hw_wrap_init(void){
     eDrvError exitStatus = drvUnknownError;
     
     //Initialize clocks
-    clock_init();
+    clock_init(CLKCTRL_CLKSEL_OSC20M_gc, CLKCTRL_PDIV_2X_gc, false, true, true);
     //Initialize GPIOs
     gpio_init();
     //Initialize SPI
@@ -30,8 +30,8 @@ eDrvError hw_wrap_init(void){
     timer_initTimA(TCA_SINGLE_CLKSEL_DIV1_gc, TCA_SINGLE_WGMODE_SINGLESLOPE_gc, TCA_SINGLE_CMP0EN_bm, TCA_SINGLE_DIR_UP_gc);
     //Set up a delay timer
     timer_initTimB(&TCB0, TCB_CNTMODE_SINGLE_gc, TCB_CLKSEL_CLKDIV2_gc);
-    //Set up a sync timer
-//    timer_initTimD();
+    //Set up a RTC
+    rtc_init(RTC_CLKSEL_INT32K_gc, 0, CYCLE_TIMER_TOP_VALUE, RTC_PRESCALER_DIV32_gc, true);
     //Set up a watchdog timer
 //    watchdog_init(WDT_PERIOD_1KCLK_gc, WDT_WINDOW_OFF_gc);
     //Initialize NTC table
@@ -320,10 +320,7 @@ eDrvError hw_wrap_timSync(uint16_t *pSysCycLen, bool *pIsLoopBroken){
     eDrvError exitStatus = drvUnknownError;
     
     //Synchronize the cycle
-    exitStatus = timer_waitOvfTimD(pSysCycLen, pIsLoopBroken);
-    if(exitStatus == drvNoError){
-        exitStatus = timer_startTimD(CYCLE_TIMER_TOP_VALUE);
-    }
+    exitStatus = rtc_waitOvf(pSysCycLen, pIsLoopBroken);
     
     return exitStatus;
 }

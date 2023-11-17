@@ -41,12 +41,13 @@
 #define DIAGNOSTICS_INFO_ADDR               MEMORY_START_ADDR
 #define DIAGNOSTICS_INFO_SIZE               4
 #define SYSTEM_FREQ                         ((uint32_t)20000000)
+#define INT32K_FREQ                         ((uint32_t)32768)
 #define VDD_VAL                             ADC_VREF_VDD
-#define CYCLE_LEN_MS                        10
-#define CYCLE_TIMER_20M_PRESC               8
+#define CYCLE_LEN_MS                        30
+#define CYCLE_TIMER_PRESC                   1
 #define CYCLE_DELAY_TIMER_MAX               1000
 #define CYCLE_DELAY_TIMER_MPLY_FACTOR       10
-#define CYCLE_TIMER_TOP_VALUE               (SYSTEM_FREQ / CYCLE_TIMER_20M_PRESC / CYCLE_DELAY_TIMER_MAX * CYCLE_LEN_MS)
+#define CYCLE_TIMER_TOP_VALUE               (INT32K_FREQ * CYCLE_LEN_MS / CYCLE_TIMER_PRESC / CYCLE_DELAY_TIMER_MAX)
 #define PWM_FREQ                            16000                               // Hz
 #define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_FREQ)
 #define PWM_MPLY_FACTOR                     10

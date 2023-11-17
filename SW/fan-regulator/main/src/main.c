@@ -15,6 +15,8 @@
 * @brief    Main routine
 */
 int main(void){
+    bool isLoopBroken = false;
+    uint16_t cycLen = 0;
     
     //Initialize hardware
     hw_wrap_init();
@@ -22,6 +24,10 @@ int main(void){
     
     //Cycle
     while(1){
+        hw_wrap_setPwmWidth(cmpOut0, 300);
+        hw_wrap_timSync(&cycLen, &isLoopBroken);
+        hw_wrap_setPwmWidth(cmpOut0, 500);
+        hw_wrap_timSync(&cycLen, &isLoopBroken);
     }
     
     return 0;
