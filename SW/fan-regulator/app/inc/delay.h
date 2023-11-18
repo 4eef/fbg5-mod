@@ -21,8 +21,8 @@
 /*!****************************************************************************
 * Prototypes for the functions
 */
-eDrvError delay_us(uint16_t time);
-eDrvError delay_ms(uint16_t time);
+eAppError delay_us(uint16_t time);
+eAppError delay_ms(uint16_t time);
 
 #endif //delay_H
 /***************** (C) COPYRIGHT ************** END OF FILE ******** 4eef ****/

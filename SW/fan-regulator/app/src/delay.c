@@ -16,16 +16,19 @@
 * @param    Time in microseconds
 * @retval   
 */
-eDrvError delay_us(uint16_t time){
-    eDrvError exitStatus = drvUnknownError;
+eAppError delay_us(uint16_t time){
+    eAppError exitStatus = appUnknownError;
+    eDrvError drvExitStatus;
 
     //Check input
-    if(time > CYCLE_TIMER_TOP_VALUE){
-        return drvBadParameter;
+    if(time > DELAY_TIMER_MAX){
+        return appBadParameter;
     }
     //Perform delay
-    exitStatus = hw_wrap_timDelayUs(time);
+    drvExitStatus = hw_wrap_timDelayUs(time);
+    if(drvExitStatus != drvNoError) return appDrvError;
     
+    exitStatus = appNoError;
     return exitStatus;
 }
 
@@ -34,20 +37,22 @@ eDrvError delay_us(uint16_t time){
 * @param    Time in milliseconds
 * @retval   
 */
-eDrvError delay_ms(uint16_t time){
-    eDrvError exitStatus = drvUnknownError;
+eAppError delay_ms(uint16_t time){
+    eAppError exitStatus = appUnknownError;
+    eDrvError drvExitStatus;
     uint16_t i;
 
     //Check input
-    if(time > CYCLE_TIMER_TOP_VALUE){
-        return drvBadParameter;
+    if(time > DELAY_TIMER_MAX){
+        return appBadParameter;
     }
     //Perform delay
     for(i = 0; i < time; i++){
-        exitStatus = hw_wrap_timDelayUs(CYCLE_TIMER_TOP_VALUE);
-        if(exitStatus != drvNoError) return drvHwError;
+        drvExitStatus = hw_wrap_timDelayUs(DELAY_TIMER_MAX);
+        if(drvExitStatus != drvNoError) return appDrvError;
     }
     
+    exitStatus = appNoError;
     return exitStatus;
 }
 
