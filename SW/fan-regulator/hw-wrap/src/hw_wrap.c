@@ -29,9 +29,9 @@ eDrvError hw_wrap_init(void){
     //Set up PWM timer
     timer_initTimA(TCA_SINGLE_CLKSEL_DIV1_gc, TCA_SINGLE_WGMODE_SINGLESLOPE_gc, TCA_SINGLE_CMP0EN_bm, TCA_SINGLE_DIR_UP_gc);
     //Set up a delay timer
-    timer_initTimB(&TCB0, TCB_CNTMODE_SINGLE_gc, TCB_CLKSEL_CLKDIV2_gc);
-    //Set up a RTC
-    rtc_init(RTC_CLKSEL_INT32K_gc, 0, CYCLE_TIMER_TOP_VALUE, RTC_PRESCALER_DIV32_gc, true);
+    timer_initTimB(&TCB0, TCB_CNTMODE_SINGLE_gc, TCB_CLKSEL_CLKDIV1_gc);
+    //Set up a RTC as cycle timer
+//    rtc_init(RTC_CLKSEL_INT32K_gc, CYCLE_TIMER_PERIOD_VALUE, CYCLE_TIMER_PERIOD_VALUE, RTC_PRESCALER_DIV1_gc, true);
     //Set up a watchdog timer
 //    watchdog_init(WDT_PERIOD_1KCLK_gc, WDT_WINDOW_OFF_gc);
     //Initialize NTC table
@@ -335,10 +335,10 @@ eDrvError hw_wrap_timDelayUs(uint16_t time){
     bool cycBrkn;
     
     //Check input
-    if(time > CYCLE_DELAY_TIMER_MAX){
+    if(time > DELAY_TIMER_MAX){
         return drvBadParameter;
     }
-    drvExStatus = timer_startTimB(&TCB0, (time * CYCLE_DELAY_TIMER_MPLY_FACTOR));
+    drvExStatus = timer_startTimB(&TCB0, (time * DELAY_TIMER_MPLY_FACTOR));
     if(drvExStatus != drvNoError) return drvHwError;
     drvExStatus = timer_waitOvfTimB(&TCB0, &cycLen, &cycBrkn);
     if((drvExStatus != drvNoError) || (cycBrkn == true)) return drvHwError;

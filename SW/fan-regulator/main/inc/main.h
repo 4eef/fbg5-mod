@@ -18,6 +18,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include "hw_wrap.h"
+#include "delay.h"
 
 /*!****************************************************************************
 * Prototypes for the functions
