@@ -21,8 +21,6 @@ eDrvError hw_wrap_init(void){
     clock_init(CLKCTRL_CLKSEL_OSC20M_gc, CLKCTRL_PDIV_2X_gc, false, true, true);
     //Initialize GPIOs
     gpio_init();
-    //Initialize SPI
-//    spi_init();
     //Set up ADCs
     adc_init(&ADC0, ADC_RESSEL_10BIT_gc, ADC_DUTYCYC_DUTY25_gc, ADC_ASDV_ASVOFF_gc, 0);
     //Set up PWM timer
@@ -30,9 +28,9 @@ eDrvError hw_wrap_init(void){
     //Set up a delay timer
     timer_initTimB(&TCB0, TCB_CNTMODE_SINGLE_gc, TCB_CLKSEL_CLKDIV1_gc);
     //Set up a RTC as cycle timer
-//    rtc_init(RTC_CLKSEL_INT32K_gc, CYCLE_TIMER_PERIOD_VALUE, CYCLE_TIMER_PERIOD_VALUE, RTC_PRESCALER_DIV1_gc, true);
+    rtc_init(RTC_CLKSEL_INT32K_gc, CYCLE_TIMER_PERIOD_VALUE, CYCLE_TIMER_PERIOD_VALUE, RTC_PRESCALER_DIV1_gc, true);
     //Set up a watchdog timer
-//    watchdog_init(WDT_PERIOD_1KCLK_gc, WDT_WINDOW_OFF_gc);
+    watchdog_init(WDT_PERIOD_1KCLK_gc, WDT_WINDOW_OFF_gc);
     //Initialize NTC table
     thermistor_init();
     
@@ -142,7 +140,9 @@ eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal){
     }
     //Get reading
     drvExitStatus = adc_getSample(ADC_NOT_USED, &adcVal, &ovrSmp, &vRef);
-    if(drvExitStatus != drvNoError) return drvExitStatus;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     //Process data
     temp = (uint32_t)adcVal * (uint32_t)vRef;
     temp = temp / ((ADC_RESOLUTION_LSB * ovrSmp) - 1);
@@ -170,7 +170,9 @@ eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal){
     }
     //Get reading
     drvExitStatus = adc_getSample(channel, &adcVal, &ovrSmp, &vRef);
-    if(drvExitStatus != drvNoError) return drvExitStatus;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     //Convert results to voltage
     temp = (uint32_t)adcVal * (uint32_t)vRef;
     temp = temp / ((ADC_RESOLUTION_LSB * ovrSmp) - 1);
@@ -197,7 +199,9 @@ eDrvError hw_wrap_adcGetNtcTemp(int16_t *pTempVal){
     }
     //Get reading
     drvExitStatus = adc_getSample(ADC_TSENSE, &adcVal, &ovrSmp, &vRef);
-    if(drvExitStatus != drvNoError) return drvExitStatus;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     //Process data
     temp = (uint32_t)adcVal * (uint32_t)vRef;
     vNtc = temp / ((ADC_RESOLUTION_LSB * ovrSmp) - 1);
@@ -207,7 +211,9 @@ eDrvError hw_wrap_adcGetNtcTemp(int16_t *pTempVal){
     rNtc = temp / vDiff;
     //Output
     drvExitStatus = thermistor_getTemp(rNtc, pTempVal);
-    if(drvExitStatus != drvNoError) return drvExitStatus;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     
     exitStatus = drvNoError;
     return exitStatus;
@@ -285,13 +291,21 @@ eDrvError hw_wrap_getRstReason(bool *pHwRst, bool *pIsWdRst, bool *pIsSwRst, boo
     eDrvError exitStatus = drvUnknownError, drvExitStatus;
     
     drvExitStatus = mcu_options_isExtRstEngd(pHwRst);
-    if(drvExitStatus != drvNoError) return drvHwError;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     drvExitStatus = mcu_options_isWdtRstEngd(pIsWdRst);
-    if(drvExitStatus != drvNoError) return drvHwError;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     drvExitStatus = mcu_options_isSwRstEngd(pIsSwRst);
-    if(drvExitStatus != drvNoError) return drvHwError;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     drvExitStatus = mcu_options_isPorRstSet(pIsPor);
-    if(drvExitStatus != drvNoError) return drvHwError;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     
     exitStatus = drvNoError;
     return exitStatus;
@@ -304,7 +318,9 @@ eDrvError hw_wrap_sysReset(void){
     eDrvError exitStatus = drvUnknownError, drvExitStatus;
     
     drvExitStatus = mcu_options_resetMcu();
-    if(drvExitStatus != drvNoError) return drvHwError;
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
     
     exitStatus = drvNoError;
     return exitStatus;
@@ -329,7 +345,7 @@ eDrvError hw_wrap_timSync(uint16_t *pSysCycLen, bool *pIsLoopBroken){
 * @param    time - delay time in microseconds
 */
 eDrvError hw_wrap_timDelayUs(uint16_t time){
-    eDrvError exitStatus = drvUnknownError, drvExStatus;
+    eDrvError exitStatus = drvUnknownError, drvExitStatus;
     uint16_t cycLen;
     bool cycBrkn;
     
@@ -337,10 +353,14 @@ eDrvError hw_wrap_timDelayUs(uint16_t time){
     if(time > DELAY_TIMER_MAX){
         return drvBadParameter;
     }
-    drvExStatus = timer_startTimB(&TCB0, (time * DELAY_TIMER_MPLY_FACTOR));
-    if(drvExStatus != drvNoError) return drvHwError;
-    drvExStatus = timer_waitOvfTimB(&TCB0, &cycLen, &cycBrkn);
-    if((drvExStatus != drvNoError) || (cycBrkn == true)) return drvHwError;
+    drvExitStatus = timer_startTimB(&TCB0, (time * DELAY_TIMER_MPLY_FACTOR));
+    if(drvExitStatus != drvNoError){
+        return drvExitStatus;
+    }
+    drvExitStatus = timer_waitOvfTimB(&TCB0, &cycLen, &cycBrkn);
+    if((drvExitStatus != drvNoError) || (cycBrkn == true)){
+        return drvExitStatus;
+    }
     
     exitStatus = drvNoError;
     return exitStatus;
@@ -374,7 +394,7 @@ eDrvError hw_wrap_setPwmWidth(eCmpOutNum outNum, uint16_t width){
         }
     }
     //Calculate value
-    temp = width * PWM_TIMER_TOP_VALUE;
+    temp = (uint32_t)width * PWM_TIMER_TOP_VALUE;
     temp = temp / PWM_MAX_WIDTH;
     value = temp;
     //Update value

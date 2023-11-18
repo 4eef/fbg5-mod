@@ -10,8 +10,9 @@
         <itemPath>../app/inc/measurements.h</itemPath>
         <itemPath>../app/inc/memory.h</itemPath>
         <itemPath>../app/inc/app_errors.h</itemPath>
-        <itemPath>../app/inc/pwm.h</itemPath>
         <itemPath>../app/inc/ext_settings.h</itemPath>
+        <itemPath>../app/inc/filter.h</itemPath>
+        <itemPath>../app/inc/fan.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="drivers" projectFiles="true">
         <itemPath>../tinyAVR-1ser-drv/inc/adc.h</itemPath>
@@ -47,7 +48,8 @@
         <itemPath>../app/src/measurements.c</itemPath>
         <itemPath>../app/src/memory.c</itemPath>
         <itemPath>../app/src/ext_settings.c</itemPath>
-        <itemPath>../app/src/pwm.c</itemPath>
+        <itemPath>../app/src/filter.c</itemPath>
+        <itemPath>../app/src/fan.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="drivers" projectFiles="true">
         <itemPath>../tinyAVR-1ser-drv/src/adc.c</itemPath>

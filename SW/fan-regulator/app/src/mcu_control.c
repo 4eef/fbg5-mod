@@ -19,11 +19,6 @@ eAppError mcu_control_init(bool *pIsSysRst){
     eDrvError drvExStatus;
     bool hwRst, wdRst, swRst, poRst;
     
-    //Initialize hardware
-    drvExStatus = hw_wrap_init();
-    if(drvExStatus != drvNoError){
-        return appDrvError;
-    }
     //Start cycle from refreshing the IWDG timer
     drvExStatus = hw_wrap_wdgRefresh();
     if(drvExStatus != drvNoError){
@@ -50,7 +45,7 @@ eAppError mcu_control_rstSysCtrl(bool isRstNeeded){
     //Perform system reset
     if(isRstNeeded != false){
         hw_wrap_sysReset();
-        exitStatus = appResetNeeded;
+        return appResetNeeded;
     }
     
     exitStatus = appNoError;
@@ -66,14 +61,18 @@ eAppError mcu_control_cycleSync(void){
     uint16_t loopCnt;
     bool isBroken;
     
-    //Reset watchdog
-    hw_wrap_wdgRefresh();
+    //Refresh watchdog
+    drvExStatus = hw_wrap_wdgRefresh();
+    if(drvExStatus != drvNoError){
+        return appDrvError;
+    }
     //Sync the cycle with timer
     drvExStatus = hw_wrap_timSync(&loopCnt, &isBroken);
-    if(drvExStatus == drvNoError){
-        exitStatus = appNoError;
+    if(drvExStatus != drvNoError){
+        return appDrvError;
     }
     
+    exitStatus = appNoError;
     return exitStatus;
 }
 

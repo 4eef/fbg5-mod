@@ -15,13 +15,24 @@
 * @brief    Main routine
 */
 int main(void){
+    bool isSysRst;
     
     //Initialize hardware
     hw_wrap_init();
+    //Set up MCU
+    mcu_control_init(&isSysRst);
+    //Set up filters
+    measurements_init();
+    //Set up fan constants
+    fan_init();
+    
     //Tests
     
     //Cycle
     while(1){
+        //Tests
+        
+        mcu_control_cycleSync();
     }
     
     return 0;

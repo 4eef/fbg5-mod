@@ -18,6 +18,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include "hw_wrap.h"
+#include "mcu_control.h"
+#include "measurements.h"
+#include "fan.h"
 #include "delay.h"
 
 /*!****************************************************************************
