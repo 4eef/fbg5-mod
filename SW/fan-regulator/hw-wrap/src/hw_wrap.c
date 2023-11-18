@@ -25,7 +25,6 @@ eDrvError hw_wrap_init(void){
 //    spi_init();
     //Set up ADCs
     adc_init(&ADC0, ADC_RESSEL_10BIT_gc, ADC_DUTYCYC_DUTY25_gc, ADC_ASDV_ASVOFF_gc, 0);
-//    adc_init(&ADC1, ADC_RESSEL_10BIT_gc, ADC_DUTYCYC_DUTY25_gc, ADC_ASDV_ASVOFF_gc, 0);
     //Set up PWM timer
     timer_initTimA(TCA_SINGLE_CLKSEL_DIV1_gc, TCA_SINGLE_WGMODE_SINGLESLOPE_gc, TCA_SINGLE_CMP0EN_bm, TCA_SINGLE_DIR_UP_gc);
     //Set up a delay timer

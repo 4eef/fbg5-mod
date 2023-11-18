@@ -29,29 +29,17 @@
 /*!****************************************************************************
 * User define
 */
-#define ADC_TEMP_RSH_VAL                    3
-#define ADC_TEMP_CAL_RSH_VAL                8
-#define KELVIN_CELSIUM_ZERO_X10             2732
-#define MEMORY_START_ADDR                   USER_SIGNATURES_START
-#define MEMORY_END_ADDR                     USER_SIGNATURES_END
-#define MEMORY_SIZE                         USER_SIGNATURES_SIZE
-#define MEMORY_PAGE_SIZE                    USER_SIGNATURES_PAGE_SIZE
-#define MEMORY_INITIALIZED_MARK             0xAE
-#define MEMORY_INITIALIZED_MARK_POS         (4 - 1)
-#define DIAGNOSTICS_INFO_ADDR               MEMORY_START_ADDR
-#define DIAGNOSTICS_INFO_SIZE               4
 #define SYSTEM_FREQ                         ((uint32_t)20000000)
 #define INT32K_FREQ                         ((uint32_t)32768)
-#define VDD_VAL                             ADC_VREF_VDD
+#define MS_IN_S                             1000
 #define CYCLE_LEN_MS                        30
 #define CYCLE_TIMER_PRESC                   1
-#define CYCLE_TIMER_MS_IN_S                 1000
-#define CYCLE_TIMER_PERIOD_VALUE            (CYCLE_LEN_MS * INT32K_FREQ / CYCLE_TIMER_PRESC / CYCLE_TIMER_MS_IN_S)
+#define CYCLE_TIMER_PERIOD_VALUE            (CYCLE_LEN_MS * INT32K_FREQ / CYCLE_TIMER_PRESC / MS_IN_S)
 #define DELAY_TIMER_20M_PRESC               1
+#define DELAY_TIMER_TOP_VALUE               (SYSTEM_FREQ / CYCLE_TIMER_PRESC / MS_IN_S)
 #define DELAY_TIMER_MAX                     1000
-#define DELAY_TIMER_TOP_VALUE               (SYSTEM_FREQ / CYCLE_TIMER_PRESC / DELAY_TIMER_MAX)
 #define DELAY_TIMER_MPLY_FACTOR             (DELAY_TIMER_TOP_VALUE / DELAY_TIMER_MAX)
-#define PWM_FREQ                            16000                               // Hz
+#define PWM_FREQ                            ((uint32_t)16000)
 #define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_FREQ)
 #define PWM_MPLY_FACTOR                     10
 #define PWM_MAX_WIDTH                       (100 * PWM_MPLY_FACTOR)
