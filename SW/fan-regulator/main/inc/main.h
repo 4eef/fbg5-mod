@@ -24,6 +24,15 @@
 #include "delay.h"
 
 /*!****************************************************************************
+ * User define
+ */
+#define TEMPERATURE_MPLY_FACTOR             THERMISTOR_MPLY_FACTOR
+#define TEMPERATURE_ERROR                   (0 * TEMPERATURE_MPLY_FACTOR)
+#define TEMPERATURE_THRESHOLD               (38 * TEMPERATURE_MPLY_FACTOR)
+#define TEMPERATURE_MAX                     (48 * TEMPERATURE_MPLY_FACTOR)
+#define TEMPERATURE_WINDOW                  (TEMPERATURE_MAX - TEMPERATURE_THRESHOLD)
+
+/*!****************************************************************************
 * Prototypes for the functions
 */
 int main(void);
