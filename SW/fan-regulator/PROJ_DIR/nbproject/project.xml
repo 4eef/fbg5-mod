@@ -23,6 +23,8 @@
                 <sourceRootElem>../main/src</sourceRootElem>
                 <sourceRootElem>../tinyAVR-1ser-drv/inc</sourceRootElem>
                 <sourceRootElem>../tinyAVR-1ser-drv/src</sourceRootElem>
+                <sourceRootElem>../hardware/inc</sourceRootElem>
+                <sourceRootElem>../hardware/src</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

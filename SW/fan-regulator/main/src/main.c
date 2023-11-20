@@ -23,7 +23,7 @@ int main(void){
     mcu_control_init(&isSysRst);
     //Set up filters
     measurements_init();
-    //Set up fan constants
+    //Set up fan defaults
     fan_init();
     
     //Tests

@@ -72,7 +72,7 @@ eAppError fan_setOut(uint16_t output){
         temp = (uint32_t)output * FAN_OUTPUT_RANGE / FAN_OUTPUT_MAX;
         fanParams.pwmOutput = temp + FAN_OUTPUT_START;
         if((fanParams.kickstart) || (fanParams.pwmOutput >= FAN_OUTPUT_END)){
-            fanParams.pwmOutput = PWM_MAX_WIDTH;
+            fanParams.pwmOutput = FAN_OUTPUT_MAX;
         }
         //Set output
         drvExitStatus = hw_wrap_setPwmWidth(cmpOut0, fanParams.pwmOutput);

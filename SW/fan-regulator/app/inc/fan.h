@@ -20,8 +20,8 @@
 /*!****************************************************************************
  * User define
  */
-#define FAN_MPLY_FACTOR                     10
-#define FAN_OUTPUT_MAX                      (100 * FAN_MPLY_FACTOR)
+#define FAN_MPLY_FACTOR                     PWM_MPLY_FACTOR
+#define FAN_OUTPUT_MAX                      PWM_MAX_WIDTH
 #define FAN_OUTPUT_START                    (25 * FAN_MPLY_FACTOR)
 #define FAN_OUTPUT_END                      (75 * FAN_MPLY_FACTOR)
 #define FAN_OUTPUT_RANGE                    (FAN_OUTPUT_END - FAN_OUTPUT_START)
