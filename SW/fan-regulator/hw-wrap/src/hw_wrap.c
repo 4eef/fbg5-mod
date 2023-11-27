@@ -15,32 +15,33 @@
 * MEMORY
 */
 pinMode_type const pinsMode[] = {
-/*0 */  makepin(PORTA,  0,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //UPDI
-/*1 */  makepin(PORTA,  1,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES0
-/*2 */  makepin(PORTA,  2,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES1
-/*3 */  makepin(PORTA,  3,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES2
-/*4 */  makepin(PORTA,  4,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES3
-/*5 */  makepin(PORTA,  5,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES4
-/*6 */  makepin(PORTA,  6,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //TSENSE
-/*7 */  makepin(PORTA,  7,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES5
-/*8 */  makepin(PORTB,  0,      PIN_OUTPUT, 0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //SWITCH
-/*9 */  makepin(PORTB,  1,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES6
-/*10*/  makepin(PORTB,  2,      PIN_OUTPUT, 0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //TXD
-/*11*/  makepin(PORTB,  3,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RXD
-/*12*/  makepin(PORTB,  4,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES7
-/*13*/  makepin(PORTB,  5,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES8
-/*14*/  makepin(PORTB,  6,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES9
-/*15*/  makepin(PORTB,  7,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES10
-/*16*/  makepin(PORTC,  0,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES11
-/*17*/  makepin(PORTC,  1,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES12
-/*18*/  makepin(PORTC,  2,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES13
-/*19*/  makepin(PORTC,  3,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES14
-/*20*/  makepin(PORTC,  4,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES15
-/*21*/  makepin(PORTC,  5,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),     //RES16
+/*0 */  makepin(PORTA,  0,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //UPDI
+/*1 */  makepin(PORTA,  1,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES0
+/*2 */  makepin(PORTA,  2,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES1
+/*3 */  makepin(PORTA,  3,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES2
+/*4 */  makepin(PORTA,  4,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES3
+/*5 */  makepin(PORTA,  5,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES4
+/*6 */  makepin(PORTA,  6,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //TSENSE
+/*7 */  makepin(PORTA,  7,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES5
+/*8 */  makepin(PORTB,  0,      PIN_OUTPUT, 0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //SWITCH
+/*9 */  makepin(PORTB,  1,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES6
+/*10*/  makepin(PORTB,  2,      PIN_OUTPUT, 0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //TXD
+/*11*/  makepin(PORTB,  3,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RXD
+/*12*/  makepin(PORTB,  4,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES7
+/*13*/  makepin(PORTB,  5,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES8
+/*14*/  makepin(PORTB,  6,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES9
+/*15*/  makepin(PORTB,  7,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES10
+/*16*/  makepin(PORTC,  0,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES11
+/*17*/  makepin(PORTC,  1,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES12
+/*18*/  makepin(PORTC,  2,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES13
+/*19*/  makepin(PORTC,  3,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES14
+/*20*/  makepin(PORTC,  4,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES15
+/*21*/  makepin(PORTC,  5,      PIN_INPUT,  0,          INV_DIS,    PUP_DIS,    PORT_ISC_INTDISABLE_gc),    //RES16
 };
 
 adcChannel_type const adcChannels[] = {
-    adcChInit(ADC0, ADC_INITDLY_DLY0_gc, ADC_MUXPOS_AIN6_gc, 0, 1, 0, ADC_PRESC_DIV16_gc, ADC_REFSEL_VDDREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//Temperature sensor
+    adcChInit(ADC0, ADC_INITDLY_DLY32_gc, ADC_MUXPOS_TEMPSENSE_gc, 32, 1, 0, ADC_PRESC_DIV128_gc, ADC_REFSEL_INTREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//Embedded temperature sensor
+    adcChInit(ADC0, ADC_INITDLY_DLY0_gc, ADC_MUXPOS_AIN6_gc, 0, 1, 0, ADC_PRESC_DIV16_gc, ADC_REFSEL_VDDREF_gc, VREF_ADC_REFSEL_1V1_gc, ADC_SAMPNUM_ACC8_gc, ADC_WINCM_NONE_gc),//NTC temperature sensor
 };
 
 /*!****************************************************************************
@@ -176,7 +177,7 @@ eDrvError hw_wrap_adcGetInnrTemp(int16_t *pTempVal){
         return drvBadParameter;
     }
     //Get reading
-    drvExitStatus = adc_getSample((adcChannel_type *)&adcChannels[ADC_NOT_USED], &adcVal, &ovrSmp, &vRef);
+    drvExitStatus = adc_getSample(adcChannels[ADC_EMBTSENSE], &adcVal, &ovrSmp, &vRef);
     if(drvExitStatus != drvNoError){
         return drvExitStatus;
     }
@@ -206,7 +207,7 @@ eDrvError hw_wrap_adcGetVolt(eAdcChNum_type channel, uint16_t *pVoltVal){
         return drvBadParameter;
     }
     //Get reading
-    drvExitStatus = adc_getSample((adcChannel_type *)&adcChannels[channel], &adcVal, &ovrSmp, &vRef);
+    drvExitStatus = adc_getSample(adcChannels[channel], &adcVal, &ovrSmp, &vRef);
     if(drvExitStatus != drvNoError){
         return drvExitStatus;
     }
@@ -235,7 +236,7 @@ eDrvError hw_wrap_adcGetNtcTemp(int16_t *pTempVal){
         return drvBadParameter;
     }
     //Get reading
-    drvExitStatus = adc_getSample((adcChannel_type *)&adcChannels[ADC_TSENSE], &adcVal, &ovrSmp, &vRef);
+    drvExitStatus = adc_getSample(adcChannels[ADC_NTCTSENSE], &adcVal, &ovrSmp, &vRef);
     if(drvExitStatus != drvNoError){
         return drvExitStatus;
     }

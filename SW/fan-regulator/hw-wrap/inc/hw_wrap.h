@@ -82,12 +82,13 @@ typedef enum{
 /*19*/  GP_RES14,
 /*20*/  GP_RES15,
 /*21*/  GP_RES16,
-/*22*/  GP_NOT_USED
+/*XX*/  GP_NOT_USED
 }GPnum_type;
 
 typedef enum{
-    ADC_TSENSE,
-    ADC_NOT_USED
+/*0 */  ADC_EMBTSENSE,
+/*1 */  ADC_NTCTSENSE,
+/*XX*/  ADC_NOT_USED
 }eAdcChNum_type;
 
 typedef enum{
