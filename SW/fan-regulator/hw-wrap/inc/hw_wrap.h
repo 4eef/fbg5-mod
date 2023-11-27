@@ -43,16 +43,63 @@
 #define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_FREQ)
 #define PWM_MPLY_FACTOR                     10
 #define PWM_MAX_WIDTH                       (100 * PWM_MPLY_FACTOR)
-#define R1_TEMP_SENSE_OHM                   1000
+
+/*!****************************************************************************
+* Macro functions
+*/
+#define gppin_set(n)                _gppin_set(pinsMode[n].p, pinsMode[n].npin)
+#define gppin_reset(n)              _gppin_reset(pinsMode[n].p, pinsMode[n].npin)
+#define gppin_togle(n)              _gppin_togle(pinsMode[n].p, pinsMode[n].npin)
+#define gppin_get(n)                _gppin_get(pinsMode[n].p, pinsMode[n].npin)
+#define gppin_getFlag(n)            _gppin_getFlag(pinsMode[n].p, pinsMode[n].npin)
+#define gppin_clrFlag(n)            _gppin_clrFlag(pinsMode[n].p, pinsMode[n].npin)
+#define gppin_dirOut(n)             _gppin_dirOut(pinsMode[n].p, pinsMode[n].npin)
+#define gppin_dirIn(n)              _gppin_dirOut(pinsMode[n].p, pinsMode[n].npin)
 
 /*!****************************************************************************
 * User enum
 */
 typedef enum{
+/*0 */  GP_UPDI,
+/*1 */  GP_RES0,
+/*2 */  GP_RES1,
+/*3 */  GP_RES2,
+/*4 */  GP_RES3,
+/*5 */  GP_RES4,
+/*6 */  GP_TSENSE,
+/*7 */  GP_RES5,
+/*8 */  GP_SWITCH,
+/*9 */  GP_RES6,
+/*10*/  GP_TXD,
+/*11*/  GP_RXD,
+/*12*/  GP_RES7,
+/*13*/  GP_RES8,
+/*14*/  GP_RES9,
+/*15*/  GP_RES10,
+/*16*/  GP_RES11,
+/*17*/  GP_RES12,
+/*18*/  GP_RES13,
+/*19*/  GP_RES14,
+/*20*/  GP_RES15,
+/*21*/  GP_RES16,
+/*22*/  GP_NOT_USED
+}GPnum_type;
+
+typedef enum{
+    ADC_TSENSE,
+    ADC_NOT_USED
+}eAdcChNum_type;
+
+typedef enum{
     cmpOut0 = 0,
     cmpOut1,
     cmpOut2
 }eCmpOutNum;
+
+/*!****************************************************************************
+* Extern variables
+*/
+//extern pinMode_type const pinsMode[];
 
 /*!****************************************************************************
 * Prototypes for the functions
