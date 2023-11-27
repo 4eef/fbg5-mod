@@ -109,6 +109,7 @@
 #define NTC_R25_OHM                         10000
 #define THERMISTOR_MPLY_FACTOR              10
 #define TEMP_STEP                           (5 * THERMISTOR_MPLY_FACTOR)
+#define R1_TEMP_SENSE_OHM                   1000
 
 /*!****************************************************************************
  * User typedef
