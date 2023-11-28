@@ -98,11 +98,6 @@ typedef enum{
 }eCmpOutNum;
 
 /*!****************************************************************************
-* Extern variables
-*/
-//extern pinMode_type const pinsMode[];
-
-/*!****************************************************************************
 * Prototypes for the functions
 */
 eDrvError hw_wrap_init(void);
