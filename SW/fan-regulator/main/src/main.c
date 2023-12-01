@@ -31,12 +31,11 @@ int main(void){
     fan_init();
     
     while(1){
-        output = 0;
         appExitStatus = measurements_getTemp(&temperature);
         if(appExitStatus != appNoError){
             mcu_control_rstSysCtrl(true);
         }
-        if(temperature > TEMPERATURE_THRESHOLD){
+        if(temperature > (TEMPERATURE_THRESHOLD + TEMPERATURE_HYSTERESIS)){
             temp = temperature - TEMPERATURE_THRESHOLD;
             temp = temp * FAN_OUTPUT_MAX / TEMPERATURE_WINDOW;
             if(temp <= FAN_OUTPUT_MAX){
@@ -44,6 +43,8 @@ int main(void){
             }else{
                 output = FAN_OUTPUT_MAX;
             }
+        }else if((temperature < (TEMPERATURE_THRESHOLD - TEMPERATURE_HYSTERESIS)) && (temperature > TEMPERATURE_ERROR)){
+            output = 0;
         }else if(temperature < TEMPERATURE_ERROR){
             output = FAN_OUTPUT_MAX;
         }

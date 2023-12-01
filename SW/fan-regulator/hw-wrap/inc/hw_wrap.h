@@ -40,7 +40,8 @@
 #define DELAY_TIMER_MAX                     1000
 #define DELAY_TIMER_MPLY_FACTOR             (DELAY_TIMER_TOP_VALUE / DELAY_TIMER_MAX)
 #define PWM_FREQ                            ((uint32_t)16000)
-#define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_FREQ)
+#define PWM_TIMER_PRESCALER                 1
+#define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_TIMER_PRESCALER / PWM_FREQ)
 #define PWM_MPLY_FACTOR                     10
 #define PWM_MAX_WIDTH                       (100 * PWM_MPLY_FACTOR)
 
