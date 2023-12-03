@@ -39,7 +39,11 @@
 #define DELAY_TIMER_TOP_VALUE               (SYSTEM_FREQ / CYCLE_TIMER_PRESC / MS_IN_S)
 #define DELAY_TIMER_MAX                     1000
 #define DELAY_TIMER_MPLY_FACTOR             (DELAY_TIMER_TOP_VALUE / DELAY_TIMER_MAX)
-#define PWM_FREQ                            ((uint32_t)16000)                   //550 - for basement
+#ifdef LIQUID
+#define PWM_FREQ                            ((uint32_t)16000)
+#elif BASEMENT
+#define PWM_FREQ                            ((uint32_t)550)
+#endif
 #define PWM_TIMER_PRESCALER                 1
 #define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_TIMER_PRESCALER / PWM_FREQ)
 #define PWM_MPLY_FACTOR                     10

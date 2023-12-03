@@ -103,7 +103,7 @@
         <targetDevice>ATtiny1617</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>AtmelIceTool</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.31</languageToolchainVersion>
         <platform>3</platform>
@@ -191,7 +191,7 @@
         <property key="call-prologues" value="false"/>
         <property key="default-bitfield-type" value="true"/>
         <property key="default-char-type" value="true"/>
-        <property key="define-macros" value=""/>
+        <property key="define-macros" value="LIQUID"/>
         <property key="disable-optimizations" value="true"/>
         <property key="extra-include-directories"
                   value="..\app\inc;..\tinyAVR-1ser-drv\inc;..\hw-wrap\inc;..\main\inc;..\hardware\inc"/>

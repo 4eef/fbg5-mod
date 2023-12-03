@@ -28,8 +28,13 @@
  */
 #define TEMPERATURE_MPLY_FACTOR             THERMISTOR_MPLY_FACTOR
 #define TEMPERATURE_ERROR                   (0 * TEMPERATURE_MPLY_FACTOR)
-#define TEMPERATURE_THRESHOLD               (38 * TEMPERATURE_MPLY_FACTOR)      //25 - for basement
-#define TEMPERATURE_MAX                     (48 * TEMPERATURE_MPLY_FACTOR)      //50 - for basement
+#ifdef LIQUID
+#define TEMPERATURE_THRESHOLD               (38 * TEMPERATURE_MPLY_FACTOR)
+#define TEMPERATURE_MAX                     (48 * TEMPERATURE_MPLY_FACTOR)
+#elif BASEMENT
+#define TEMPERATURE_THRESHOLD               (25 * TEMPERATURE_MPLY_FACTOR)
+#define TEMPERATURE_MAX                     (50 * TEMPERATURE_MPLY_FACTOR)
+#endif
 #define TEMPERATURE_WINDOW                  (TEMPERATURE_MAX - TEMPERATURE_THRESHOLD)
 #define TEMPERATURE_HYSTERESIS              (1 * TEMPERATURE_MPLY_FACTOR)
 
