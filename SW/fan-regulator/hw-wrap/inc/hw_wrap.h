@@ -42,7 +42,7 @@
 #ifdef LIQUID
 #define PWM_FREQ                            ((uint32_t)16000)
 #elif BASEMENT
-#define PWM_FREQ                            ((uint32_t)550)
+#define PWM_FREQ                            ((uint32_t)650)
 #endif
 #define PWM_TIMER_PRESCALER                 1
 #define PWM_TIMER_TOP_VALUE                 (SYSTEM_FREQ / PWM_TIMER_PRESCALER / PWM_FREQ)
