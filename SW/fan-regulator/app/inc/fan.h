@@ -25,13 +25,12 @@
 #ifdef LIQUID
 #define FAN_OUTPUT_START                    (25 * FAN_MPLY_FACTOR)
 #define FAN_OUTPUT_END                      (75 * FAN_MPLY_FACTOR)
-#define FAN_KICKSTART_TIME_MS               300
 #elif BASEMENT
 #define FAN_OUTPUT_START                    (1 * FAN_MPLY_FACTOR)
 #define FAN_OUTPUT_END                      (90 * FAN_MPLY_FACTOR)
-#define FAN_KICKSTART_TIME_MS               500
 #endif
 #define FAN_OUTPUT_RANGE                    (FAN_OUTPUT_END - FAN_OUTPUT_START)
+#define FAN_KICKSTART_TIME_MS               300
 #define FAN_KICKSTART_TIME_CYCLES           (FAN_KICKSTART_TIME_MS / CYCLE_LEN_MS)
 
 /*!****************************************************************************
