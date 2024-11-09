@@ -5,12 +5,6 @@
         <group>
             <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/main/inc/main.h</file>
             <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/main/src/main.c</file>
-            <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/hw-wrap/inc/hw_wrap.h</file>
-            <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/tinyAVR-1ser-drv/src/rtc.c</file>
-            <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/tinyAVR-1ser-drv/src/timer.c</file>
-            <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/app/inc/fan.h</file>
-            <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/tinyAVR-1ser-drv/src/adc.c</file>
-            <file>file:/C:/Users/4eef/Projects/fbg5-mod/SW/fan-regulator/app/src/fan.c</file>
         </group>
     </open-files>
 </project-private>
